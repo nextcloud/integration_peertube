@@ -1,5 +1,5 @@
 <?php
-namespace OCA\Tmdb\Settings;
+namespace OCA\Peertube\Settings;
 
 use OCP\IURLGenerator;
 use OCP\IL10N;

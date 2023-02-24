@@ -1,12 +1,12 @@
 <?php
-namespace OCA\Tmdb\Settings;
+namespace OCA\Peertube\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\IConfig;
 use OCP\Settings\ISettings;
 
-use OCA\Tmdb\AppInfo\Application;
+use OCA\Peertube\AppInfo\Application;
 
 class Admin implements ISettings {
 
@@ -26,10 +26,10 @@ class Admin implements ISettings {
 	 * @return TemplateResponse
 	 */
 	public function getForm(): TemplateResponse {
-		$apiKey = $this->config->getAppValue(Application::APP_ID, 'api_key');
+		$instances = $this->config->getAppValue(Application::APP_ID, 'instances');
 
 		$state = [
-			'api_key' => $apiKey,
+			'instances' => $instances,
 		];
 		$this->initialStateService->provideInitialState('admin-config', $state);
 		return new TemplateResponse(Application::APP_ID, 'adminSettings');

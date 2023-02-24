@@ -126,7 +126,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 			return false;
 		}
 
-		return $this->getVideoId($referenceText) !== null;
+		return $this->getInfoFromVideoUrl($referenceText) !== null;
 	}
 
 	/**
@@ -135,16 +135,19 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 	public function resolveReference(string $referenceText): ?IReference {
 		if ($this->matchReference($referenceText)) {
 			try {
-				$videoId = $this->getVideoId($referenceText);
-				$videoInfo = $this->peertubeAPIService->getVideoInfo($videoId);
-				$videoInfo['embed_url'] = 'https://framatube.org' . $videoInfo['embedPath'];
+				$urlInfo = $this->getInfoFromVideoUrl($referenceText);
+				$videoId = $urlInfo['video_id'];
+				$instanceUrl = $urlInfo['instance_url'];
+
+				$videoInfo = $this->peertubeAPIService->getVideoInfo($instanceUrl, $videoId);
+				$videoInfo['embed_url'] = $instanceUrl . $videoInfo['embedPath'];
 				$reference = new Reference($referenceText);
 				$reference->setTitle($videoInfo['name']);
 				$thumbnailUrl = $this->urlGenerator->linkToRouteAbsolute(
 					Application::APP_ID . '.peertubeAPI.getThumbnail',
 					[
 						'thumbnailPath' => $videoInfo['thumbnailPath'],
-						'searchInstanceUrl' => 'https://framatube.org',
+						'searchInstanceUrl' => $instanceUrl,
 						'fallbackName' => $videoInfo['name'],
 					]
 				);
@@ -167,10 +170,17 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 	 * @param string $url
 	 * @return array|null
 	 */
-	private function getVideoId(string $url): ?string {
-		preg_match('/^(?:https?:\/\/)?(?:www\.)?framatube\.org\/w\/([a-zA-Z0-9]+)$/i', $url, $matches);
-		if (count($matches) > 1) {
-			return $matches[1];
+	private function getInfoFromVideoUrl(string $url): ?array {
+		foreach ($this->peertubeAPIService->getPeertubeInstances() as $instanceUrl) {
+			if (str_starts_with($url, $instanceUrl)) {
+				preg_match('/\/w\/([a-zA-Z0-9-]+)$/i', $url, $matches);
+				if (count($matches) > 1) {
+					return [
+						'instance_url' => $instanceUrl,
+						'video_id' => $matches[1],
+					];
+				}
+			}
 		}
 
 		return null;

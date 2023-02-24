@@ -78,8 +78,6 @@ class VideoSearchProvider implements IProvider {
 	 * @inheritDoc
 	 */
 	public function getOrder(string $route, array $routeParameters): int {
-		// TODO remove this
-		return -1;
 		if (strpos($route, Application::APP_ID . '.') === 0) {
 			// Active app, prefer Peertube results
 			return -1;

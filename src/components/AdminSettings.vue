@@ -1,29 +1,23 @@
 <template>
-	<div id="tmdb_prefs" class="section">
+	<div id="peertube_prefs" class="section">
 		<h2>
-			<TmdbIcon class="icon" />
-			{{ t('integration_tmdb', 'TMDB integration') }}
+			<PeertubeIcon class="icon" />
+			{{ t('integration_peertube', 'Peertube integration') }}
 		</h2>
-		<div id="tmdb-content">
+		<div id="peertube-content">
 			<div class="line">
-				<label for="tmdb-api-key">
-					<KeyIcon :size="20" class="icon" />
-					{{ t('integration_tmdb', 'TMDB API key') }}
+				<label for="peertube-instances">
+					<EarthIcon :size="20" class="icon" />
+					{{ t('integration_peertube', 'Peertube instance list (separated by comas or new lines)') }}
 				</label>
-				<input id="tmdb-api-key"
-					v-model="state.api_key"
-					type="password"
-					:placeholder="t('integration_tmdb', '...')"
-					@input="onInput">
+				<textarea id="peertube-instances"
+					v-model="state.instances"
+					:placeholder="t('integration_peertube', '...')"
+					@input="onInput" />
 			</div>
 			<p class="settings-hint">
 				<InformationOutlineIcon :size="20" class="icon" />
-				{{ t('integration_tmdb', 'Leave this field empty to use the default API key which has a very large quota.') }}
-			</p>
-			<p class="settings-hint">
-				<a href="https://themoviedb.org" target="_blank">
-					{{ t('integration_tmdb', 'You can create an app and API key in the "API" section of your TMDB account settings.') }}
-				</a>
+				{{ t('integration_peertube', 'Nextcloud will search and resolve video links for all those instances.') }}
 			</p>
 		</div>
 	</div>
@@ -31,9 +25,9 @@
 
 <script>
 import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
-import KeyIcon from 'vue-material-design-icons/Key.vue'
+import EarthIcon from 'vue-material-design-icons/Earth.vue'
 
-import TmdbIcon from './icons/TmdbIcon.vue'
+import PeertubeIcon from './icons/PeertubeIcon.vue'
 
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
@@ -45,8 +39,8 @@ export default {
 	name: 'AdminSettings',
 
 	components: {
-		TmdbIcon,
-		KeyIcon,
+		PeertubeIcon,
+		EarthIcon,
 		InformationOutlineIcon,
 	},
 
@@ -54,7 +48,7 @@ export default {
 
 	data() {
 		return {
-			state: loadState('integration_tmdb', 'admin-config'),
+			state: loadState('integration_peertube', 'admin-config'),
 			loading: false,
 		}
 	},
@@ -73,7 +67,7 @@ export default {
 			this.loading = true
 			delay(() => {
 				this.saveOptions({
-					api_key: this.state.api_key,
+					instances: this.state.instances,
 				})
 			}, 2000)()
 		},
@@ -81,12 +75,12 @@ export default {
 			const req = {
 				values,
 			}
-			const url = generateUrl('/apps/integration_tmdb/admin-config')
+			const url = generateUrl('/apps/integration_peertube/admin-config')
 			axios.put(url, req).then((response) => {
-				showSuccess(t('integration_tmdb', 'TMDB options saved'))
+				showSuccess(t('integration_peertube', 'Peertube options saved'))
 			}).catch((error) => {
 				showError(
-					t('integration_tmdb', 'Failed to save TMDB options')
+					t('integration_peertube', 'Failed to save Peertube options')
 					+ ': ' + (error.response?.data?.error ?? '')
 				)
 				console.error(error)
@@ -99,8 +93,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#tmdb_prefs {
-	#tmdb-content {
+#peertube_prefs {
+	#peertube-content {
 		margin-left: 40px;
 	}
 	h2,
@@ -116,6 +110,11 @@ export default {
 
 	h2 .icon {
 		margin-right: 8px;
+	}
+
+	#peertube-instances {
+		width: 350px;
+		height: 100px;
 	}
 
 	.line {

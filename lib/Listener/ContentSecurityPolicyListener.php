@@ -22,12 +22,19 @@
 
 namespace OCA\Peertube\Listener;
 
+use OCA\Peertube\Service\PeertubeAPIService;
 use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 
 class ContentSecurityPolicyListener implements IEventListener {
+
+	private PeertubeAPIService $peertubeAPIService;
+
+	public function __construct(PeertubeAPIService $peertubeAPIService) {
+		$this->peertubeAPIService = $peertubeAPIService;
+	}
 
 	/**
 	 * @inheritDoc
@@ -38,7 +45,9 @@ class ContentSecurityPolicyListener implements IEventListener {
 		}
 
 		$policy = new ContentSecurityPolicy();
-		$policy->addAllowedFrameDomain('https://framatube.org');
+		foreach ($this->peertubeAPIService->getPeertubeInstances() as $instanceUrl) {
+			$policy->addAllowedFrameDomain($instanceUrl);
+		}
 		$event->addPolicy($policy);
 	}
 }

@@ -51,6 +51,16 @@ class PeertubeAPIService {
 	}
 
 	/**
+	 * @return array
+	 */
+	public function getPeertubeInstances(): array {
+		$instances = trim($this->config->getAppValue(Application::APP_ID, 'instances'));
+		$instances = preg_replace('/\s+/', ',', $instances);
+		$instances = preg_replace('/\n/', ',', $instances);
+		return explode(',', $instances);
+	}
+
+	/**
 	 * Search videos
 	 *
 	 * @param string $query
@@ -59,18 +69,28 @@ class PeertubeAPIService {
 	 * @return array request result
 	 */
 	public function searchVideo(string $query, int $offset = 0, int $limit = 5): array {
+		$instances = $this->getPeertubeInstances();
 		$params = [
 			'search' => $query,
 			'count' => $offset + $limit,
 		];
-		$result = $this->request('search/videos', $params);
-		if (!isset($result['error']) && isset($result['data']) && is_array($result['data'])) {
-			return array_map(static function (array $video) {
-				$video['search_instance_url'] = 'https://framatube.org';
-				return $video;
-			}, array_slice($result['data'], $offset, $limit));
+		$cumulatedResults = [];
+		foreach ($instances as $instanceUrl) {
+			$result = $this->request($instanceUrl, 'search/videos', $params);
+			if (!isset($result['error']) && isset($result['data']) && is_array($result['data'])) {
+				$instanceResults = array_map(static function (array $video) {
+					$video['search_instance_url'] = 'https://framatube.org';
+					return $video;
+				}, array_slice($result['data'], $offset, $limit));
+				$cumulatedResults = array_merge($cumulatedResults, $instanceResults);
+				if (count($cumulatedResults) >= $limit) {
+					return $cumulatedResults;
+				}
+			} else {
+				$this->logger->warning('Peertube search error (' . $instanceUrl . ') : ' . $result['error'], ['app' => Application::APP_ID]);
+			}
 		}
-		return $result;
+		return $cumulatedResults;
 	}
 
 	private function getLanguage(): string {
@@ -82,11 +102,12 @@ class PeertubeAPIService {
 	}
 
 	/**
+	 * @param string $instanceUrl
 	 * @param string $videoId
 	 * @return array
 	 */
-	public function getVideoInfo(string $videoId): array {
-		return $this->request('videos/' . $videoId);
+	public function getVideoInfo(string $instanceUrl, string $videoId): array {
+		return $this->request($instanceUrl, 'videos/' . $videoId);
 	}
 
 	/**
@@ -95,8 +116,11 @@ class PeertubeAPIService {
 	 * @return array
 	 */
 	public function getThumbnail(string $serverUrl, string $thumbnailPath): array {
-		// TODO check the server URL, build the target url
-		$serverUrl = 'https://framatube.org';
+		$instanceUrls = $this->getPeertubeInstances();
+		if (!in_array($serverUrl, $instanceUrls)) {
+			return ['error' => 'Invalid Peertube instance: ' . $serverUrl];
+		}
+
 		$url = $serverUrl . '/' . $thumbnailPath;
 		$options = [
 			'headers' => [
@@ -124,15 +148,16 @@ class PeertubeAPIService {
 
 	/**
 	 * Make an HTTP request to the Peertube API
+	 * @param string $instanceUrl
 	 * @param string $endPoint The path to reach in api.github.com
 	 * @param array $params Query parameters (key/val pairs)
 	 * @param string $method HTTP query method
 	 * @param bool $rawResponse
 	 * @return array decoded request result or error
 	 */
-	public function request(string $endPoint, array $params = [], string $method = 'GET', bool $rawResponse = false): array {
+	public function request(string $instanceUrl, string $endPoint, array $params = [], string $method = 'GET', bool $rawResponse = false): array {
 		try {
-			$url = 'https://framatube.org/api/v1/' . $endPoint;
+			$url = $instanceUrl . '/api/v1/' . $endPoint;
 			$options = [
 				'headers' => [
 					'User-Agent' => 'Nextcloud Peertube integration',

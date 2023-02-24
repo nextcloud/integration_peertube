@@ -1,12 +1,12 @@
 <?php
-namespace OCA\Tmdb\Settings;
+namespace OCA\Peertube\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\IConfig;
 use OCP\Settings\ISettings;
 
-use OCA\Tmdb\AppInfo\Application;
+use OCA\Peertube\AppInfo\Application;
 
 class Personal implements ISettings {
 
@@ -27,16 +27,11 @@ class Personal implements ISettings {
 	 */
 	public function getForm(): TemplateResponse {
 		$searchEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'search_enabled', '1') === '1';
-		$navigationEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'navigation_enabled', '0') === '1';
 		$linkPreviewEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'link_preview_enabled', '1') === '1';
-		$adminApiKey = $this->config->getAppValue(Application::APP_ID, 'api_key', Application::DEFAULT_API_KEY_V3) ?: Application::DEFAULT_API_KEY_V3;
-		$apiKey = $this->config->getUserValue($this->userId, Application::APP_ID, 'api_key', $adminApiKey) ?: $adminApiKey;
 
 		$userConfig = [
 			'search_enabled' => $searchEnabled,
-			'navigation_enabled' => $navigationEnabled ,
 			'link_preview_enabled' => $linkPreviewEnabled,
-			'api_key' => $apiKey,
 		];
 		$this->initialStateService->provideInitialState('user-config', $userConfig);
 		return new TemplateResponse(Application::APP_ID, 'personalSettings');
