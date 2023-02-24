@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<info>
+    <id>integration_peertube</id>
+    <name>Peertube integration</name>
+    <summary>Integration of The Movie Database</summary>
+    <description><![CDATA[Peertube integration provides...]]></description>
+    <version>1.0.0</version>
+    <licence>agpl</licence>
+    <author>Julien Veyssier</author>
+    <namespace>Peertube</namespace>
+    <documentation>
+        <developer>https://github.com/julien-nc/integration_peertube</developer>
+    </documentation>
+    <category>integration</category>
+    <website>https://github.com/julien-nc/integration_peertube</website>
+    <bugs>https://github.com/julien-nc/integration_peertube/issues</bugs>
+    <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot1.jpg</screenshot>
+    <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot2.jpg</screenshot>
+    <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot3.jpg</screenshot>
+    <dependencies>
+        <nextcloud min-version="26" max-version="26"/>
+    </dependencies>
+    <settings>
+        <admin>OCA\Peertube\Settings\Admin</admin>
+        <admin-section>OCA\Peertube\Settings\AdminSection</admin-section>
+        <personal>OCA\Peertube\Settings\Personal</personal>
+        <personal-section>OCA\Peertube\Settings\PersonalSection</personal-section>
+    </settings>
+</info>
