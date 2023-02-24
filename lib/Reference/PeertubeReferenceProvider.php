@@ -180,6 +180,14 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 						'video_id' => $matches[1],
 					];
 				}
+
+				preg_match('/\/videos\/watch\/([a-zA-Z0-9-]+)$/i', $url, $matches);
+				if (count($matches) > 1) {
+					return [
+						'instance_url' => $instanceUrl,
+						'video_id' => $matches[1],
+					];
+				}
 			}
 		}
 
