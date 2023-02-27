@@ -78,8 +78,8 @@ class PeertubeAPIService {
 		foreach ($instances as $instanceUrl) {
 			$result = $this->request($instanceUrl, 'search/videos', $params);
 			if (!isset($result['error']) && isset($result['data']) && is_array($result['data'])) {
-				$instanceResults = array_map(static function (array $video) {
-					$video['search_instance_url'] = 'https://framatube.org';
+				$instanceResults = array_map(static function (array $video) use ($instanceUrl) {
+					$video['search_instance_url'] = $instanceUrl;
 					return $video;
 				}, array_slice($result['data'], $offset, $limit));
 				$cumulatedResults = array_merge($cumulatedResults, $instanceResults);
@@ -121,7 +121,7 @@ class PeertubeAPIService {
 			return ['error' => 'Invalid Peertube instance: ' . $serverUrl];
 		}
 
-		$url = $serverUrl . '/' . $thumbnailPath;
+		$url = $serverUrl . $thumbnailPath;
 		$options = [
 			'headers' => [
 				'User-Agent' => 'Nextcloud Peertube integration',

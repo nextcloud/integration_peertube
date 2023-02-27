@@ -142,13 +142,13 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 				$videoInfo = $this->peertubeAPIService->getVideoInfo($instanceUrl, $videoId);
 				$videoInfo['embed_url'] = $instanceUrl . $videoInfo['embedPath'];
 				$reference = new Reference($referenceText);
-				$reference->setTitle($videoInfo['name']);
+				$reference->setTitle($videoInfo['name'] ?? '???');
 				$thumbnailUrl = $this->urlGenerator->linkToRouteAbsolute(
 					Application::APP_ID . '.peertubeAPI.getThumbnail',
 					[
-						'thumbnailPath' => $videoInfo['thumbnailPath'],
+						'thumbnailPath' => $videoInfo['thumbnailPath'] ?? '',
 						'searchInstanceUrl' => $instanceUrl,
-						'fallbackName' => $videoInfo['name'],
+						'fallbackName' => $videoInfo['name'] ?? '???',
 					]
 				);
 				$reference->setImageUrl($thumbnailUrl);

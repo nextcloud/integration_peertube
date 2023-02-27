@@ -11,15 +11,15 @@
 
 namespace OCA\Peertube\Controller;
 
+use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataDownloadResponse;
 use OCP\AppFramework\Http\RedirectResponse;
-use OCP\AppFramework\OCSController;
 use OCP\IRequest;
 
 use OCA\Peertube\Service\PeertubeAPIService;
 use OCP\IURLGenerator;
 
-class PeertubeAPIController extends OCSController {
+class PeertubeAPIController extends Controller {
 
 	private PeertubeAPIService $peertubeAPIService;
 	private IURLGenerator $urlGenerator;
