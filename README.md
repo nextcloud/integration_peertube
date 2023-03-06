@@ -9,4 +9,9 @@ Supported video links:
 
 ### Admin settings
 
-There is a "Connected accounts" **admin** settings section to manage your instance list.
+There is a "Connected accounts" **admin** settings section to manage your supported/allowed instance list.
+
+### Personal settings
+
+Users can toggle the Peertube unified search provider and the link previews
+in the "Connected accounts" **personal** settings section.

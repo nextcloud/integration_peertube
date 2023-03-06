@@ -3,7 +3,7 @@
     <id>integration_peertube</id>
     <name>Peertube integration</name>
     <summary>Integration of Peertube</summary>
-    <description><![CDATA[Peertube integration provides a link picker provider and a link preview widget for video links]]></description>
+    <description><![CDATA[Peertube integration provides a smart picker provider and a link preview widget for video links.]]></description>
     <version>1.0.0</version>
     <licence>agpl</licence>
     <author>Julien Veyssier</author>
