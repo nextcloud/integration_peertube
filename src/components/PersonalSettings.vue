@@ -85,10 +85,10 @@ export default {
 			}
 			const url = generateUrl('/apps/integration_peertube/config')
 			axios.put(url, req).then((response) => {
-				showSuccess(t('integration_peertube', 'OpenStreetMap options saved'))
+				showSuccess(t('integration_peertube', 'PeerTube options saved'))
 			}).catch((error) => {
 				showError(
-					t('integration_peertube', 'Failed to save OpenStreetMap options')
+					t('integration_peertube', 'Failed to save PeerTube options')
 					+ ': ' + (error.response?.data?.error ?? '')
 				)
 				console.debug(error)
