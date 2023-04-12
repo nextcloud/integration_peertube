@@ -99,9 +99,14 @@ class VideoSearchProvider implements IProvider {
 		$offset = $query->getCursor();
 		$offset = $offset ? intval($offset) : 0;
 
-		$searchEnabled = $this->config->getAppValue(Application::APP_ID, 'search_enabled', '1') === '1';
-		if (!$searchEnabled) {
-			return SearchResult::paginated($this->getName(), [], 0);
+		$routeFrom = $query->getRoute();
+		$requestedFromSmartPicker = $routeFrom === '' || $routeFrom === 'smart-picker';
+
+		if (!$requestedFromSmartPicker) {
+			$searchEnabled = $this->config->getUserValue($user->getUID(), Application::APP_ID, 'search_enabled', '1') === '1';
+			if (!$searchEnabled) {
+				return SearchResult::paginated($this->getName(), [], 0);
+			}
 		}
 
 		$searchResult = $this->peertubeAPIService->searchVideo($term, $offset, $limit);

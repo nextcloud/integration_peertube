@@ -103,17 +103,10 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 	 * @inheritDoc
 	 */
 	public function getSupportedSearchProviderIds(): array {
-		$searchProviderIds = [
-			'peertube-search-video',
-		];
-		if ($this->userId !== null) {
-			$searchVideosEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'search_enabled', '1') === '1';
-			if ($searchVideosEnabled) {
-				return $searchProviderIds;
-			}
+		if (count($this->peertubeAPIService->getPeertubeInstances()) === 0) {
 			return [];
 		}
-		return $searchProviderIds;
+		return ['peertube-search-video'];
 	}
 
 	/**
