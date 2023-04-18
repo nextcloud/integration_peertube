@@ -21,19 +21,12 @@ use OCP\IURLGenerator;
 
 class PeertubeAPIController extends Controller {
 
-	private PeertubeAPIService $peertubeAPIService;
-	private IURLGenerator $urlGenerator;
-	private ?string $userId;
-
-	public function __construct(string          $appName,
-								IRequest        $request,
-								PeertubeAPIService   $peertubeAPIService,
-								IURLGenerator   $urlGenerator,
-								?string         $userId) {
+	public function __construct(string $appName,
+								IRequest $request,
+								private PeertubeAPIService $peertubeAPIService,
+								private IURLGenerator $urlGenerator,
+								?string $userId) {
 		parent::__construct($appName, $request);
-		$this->peertubeAPIService = $peertubeAPIService;
-		$this->urlGenerator = $urlGenerator;
-		$this->userId = $userId;
 	}
 
 	/**

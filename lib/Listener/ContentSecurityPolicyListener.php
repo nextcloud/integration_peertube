@@ -30,10 +30,7 @@ use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 
 class ContentSecurityPolicyListener implements IEventListener {
 
-	private PeertubeAPIService $peertubeAPIService;
-
-	public function __construct(PeertubeAPIService $peertubeAPIService) {
-		$this->peertubeAPIService = $peertubeAPIService;
+	public function __construct(private PeertubeAPIService $peertubeAPIService) {
 	}
 
 	/**

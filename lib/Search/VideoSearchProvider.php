@@ -26,7 +26,6 @@ namespace OCA\Peertube\Search;
 
 use OCA\Peertube\Service\PeertubeAPIService;
 use OCA\Peertube\AppInfo\Application;
-use OCA\Peertube\Service\UtilsService;
 use OCP\App\IAppManager;
 use OCP\IL10N;
 use OCP\IConfig;
@@ -39,25 +38,11 @@ use OCP\Search\SearchResultEntry;
 
 class VideoSearchProvider implements IProvider {
 
-	private IAppManager $appManager;
-	private IL10N $l10n;
-	private IConfig $config;
-	private PeertubeAPIService $peertubeAPIService;
-	private IURLGenerator $urlGenerator;
-	private UtilsService $utilsService;
-
-	public function __construct(IAppManager        $appManager,
-								IL10N              $l10n,
-								IConfig            $config,
-								IURLGenerator      $urlGenerator,
-								UtilsService       $utilsService,
-								PeertubeAPIService     $peertubeAPIService) {
-		$this->appManager = $appManager;
-		$this->l10n = $l10n;
-		$this->config = $config;
-		$this->peertubeAPIService = $peertubeAPIService;
-		$this->urlGenerator = $urlGenerator;
-		$this->utilsService = $utilsService;
+	public function __construct(private IAppManager        $appManager,
+								private IL10N              $l10n,
+								private IConfig            $config,
+								private IURLGenerator      $urlGenerator,
+								private PeertubeAPIService $peertubeAPIService) {
 	}
 
 	/**

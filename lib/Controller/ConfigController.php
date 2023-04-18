@@ -17,19 +17,15 @@ use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
 
 use OCA\Peertube\AppInfo\Application;
+use OCP\PreConditionNotMetException;
 
 class ConfigController extends Controller {
 
-	private IConfig $config;
-	private ?string $userId;
-
-	public function __construct(string   $appName,
-								IRequest $request,
-								IConfig  $config,
-								?string  $userId) {
+	public function __construct(string          $appName,
+								IRequest        $request,
+								private IConfig $config,
+								private ?string $userId) {
 		parent::__construct($appName, $request);
-		$this->config = $config;
-		$this->userId = $userId;
 	}
 
 	/**
@@ -37,6 +33,7 @@ class ConfigController extends Controller {
 	 *
 	 * @param array $values
 	 * @return DataResponse
+	 * @throws PreConditionNotMetException
 	 */
 	public function setConfig(array $values): DataResponse {
 		foreach ($values as $key => $value) {

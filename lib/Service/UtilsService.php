@@ -16,11 +16,8 @@ use OCP\IDateTimeFormatter;
 
 class UtilsService {
 
-	private IDateTimeFormatter $dateTimeFormatter;
-
 	public function __construct (string             $appName,
-								 IDateTimeFormatter $dateTimeFormatter) {
-		$this->dateTimeFormatter = $dateTimeFormatter;
+								 private IDateTimeFormatter $dateTimeFormatter) {
 	}
 
 	public function formatDate(string $date, string $format = 'long'): string {
