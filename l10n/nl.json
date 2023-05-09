@@ -1,0 +1,7 @@
+{ "translations": {
+    "Bad HTTP method" : "Foute HTTP methode",
+    "Bad credentials" : "Foute inloggegevens",
+    "Connected accounts" : "Verbonden accounts",
+    "..." : "..."
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

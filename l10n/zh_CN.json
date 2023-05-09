@@ -1,0 +1,7 @@
+{ "translations": {
+    "Bad HTTP method" : "错误的HTTP方法",
+    "Bad credentials" : "错误的凭据",
+    "Connected accounts" : "关联账号",
+    "..." : "..."
+},"pluralForm" :"nplurals=1; plural=0;"
+}
