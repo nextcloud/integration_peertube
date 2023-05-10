@@ -1,4 +1,6 @@
 { "translations": {
+    "Bad HTTP method" : "Лош HTTP метод",
+    "Bad credentials" : "Лоши идентификационни данни",
     "Connected accounts" : "Свързани профили",
     "..." : "..."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

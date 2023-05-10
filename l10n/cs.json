@@ -1,4 +1,5 @@
 { "translations": {
+    "Bad HTTP method" : "Nesprávná HTTP metoda",
     "Bad credentials" : "Nesprávné přihlašovací údaje",
     "Connected accounts" : "Propojené účty",
     "..." : "..."

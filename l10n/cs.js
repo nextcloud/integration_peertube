@@ -1,6 +1,7 @@
 OC.L10N.register(
     "integration_peertube",
     {
+    "Bad HTTP method" : "Nesprávná HTTP metoda",
     "Bad credentials" : "Nesprávné přihlašovací údaje",
     "Connected accounts" : "Propojené účty",
     "..." : "..."
