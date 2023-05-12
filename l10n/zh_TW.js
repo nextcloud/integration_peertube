@@ -12,6 +12,11 @@ OC.L10N.register(
     "..." : "...",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud 將會搜尋並解析全部這些站台的影片連結。",
     "Peertube options saved" : "PeerTube 選項已儲存",
-    "Failed to save Peertube options" : "儲存 PeerTube 選項失敗"
+    "Failed to save Peertube options" : "儲存 PeerTube 選項失敗",
+    "Enable searching for Peertube videos" : "啟用 PeerTube 影片搜尋",
+    "Warning, everything you type in the search bar will be sent to some Peertube instances." : "警告，您在搜尋列中輸入的所有東西都會傳送到部份 PeerTube 站台。",
+    "Enable Peertube video link previews" : "啟用 PeerTube 影片連結預覽",
+    "PeerTube options saved" : "PeerTube 選項已儲存",
+    "Failed to save PeerTube options" : "儲存 PeerTube 選項失敗"
 },
 "nplurals=1; plural=0;");
