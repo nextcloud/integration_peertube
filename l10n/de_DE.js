@@ -10,7 +10,7 @@ OC.L10N.register(
     "Peertube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Die Peertube-Integration bietet einen intelligenten Auswahlanbieter für die Suche nach Videos \nund ein Linkvorschau-Widget für Videolinks.",
     "Peertube instance list (separated by comas or new lines)" : "Peertube-Instanzliste (getrennt durch Kommas oder neue Zeilen)",
     "..." : "…",
-    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud sucht und löst Videolinks für alle diese Instanzen auf.",
+    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud sucht Videolinks für alle diese Instanzen und löst sie auf.",
     "Peertube options saved" : "Peertube-Einstellungen gespeichert",
     "Failed to save Peertube options" : "Fehler beim Speichern der Peertube-Einstellungen",
     "Enable searching for Peertube videos" : "Suche nach Peertube-Videos aktivieren",
