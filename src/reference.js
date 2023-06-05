@@ -20,9 +20,11 @@
  */
 
 import { registerWidget } from '@nextcloud/vue-richtext'
+import { linkTo } from '@nextcloud/router'
+import { getRequestToken } from '@nextcloud/auth'
 
-__webpack_nonce__ = btoa(OC.requestToken) // eslint-disable-line
-__webpack_public_path__ = OC.linkTo('integration_peertube', 'js/') // eslint-disable-line
+__webpack_nonce__ = btoa(getRequestToken()) // eslint-disable-line
+__webpack_public_path__ = linkTo('integration_peertube', 'js/') // eslint-disable-line
 
 registerWidget('integration_peertube_video', async (el, { richObjectType, richObject, accessible }) => {
 	const { default: Vue } = await import(/* webpackChunkName: "vue-lazy" */'vue')
