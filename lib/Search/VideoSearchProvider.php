@@ -56,7 +56,7 @@ class VideoSearchProvider implements IProvider {
 	 * @inheritDoc
 	 */
 	public function getName(): string {
-		return $this->l10n->t('Peertube videos');
+		return $this->l10n->t('PeerTube videos');
 	}
 
 	/**
