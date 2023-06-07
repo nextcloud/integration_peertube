@@ -8,7 +8,7 @@
 			<div class="line">
 				<label for="peertube-instances">
 					<EarthIcon :size="20" class="icon" />
-					{{ t('integration_peertube', 'Peertube instance list (separated by comas or new lines)') }}
+					{{ t('integration_peertube', 'Peertube instance list (separated by commas or new lines)') }}
 				</label>
 				<textarea id="peertube-instances"
 					v-model="state.instances"
