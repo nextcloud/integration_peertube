@@ -61,7 +61,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 	 * @inheritDoc
 	 */
 	public function getTitle(): string {
-		return $this->l10n->t('Peertube videos');
+		return $this->l10n->t('PeerTube videos');
 	}
 
 	/**
