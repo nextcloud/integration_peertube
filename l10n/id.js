@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Bad HTTP method" : "Metode HTTP tidak benar",
     "Bad credentials" : "Kredensial tidak benar",
-    "Connected accounts" : "Akun terhubung",
-    "..." : "..."
+    "Connected accounts" : "Akun terhubung"
 },
 "nplurals=1; plural=0;");

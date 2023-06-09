@@ -1,6 +1,5 @@
 { "translations": {
     "Bad credentials" : "Gölluð auðkenni",
-    "Connected accounts" : "Tengdir aðgangar",
-    "..." : "..."
+    "Connected accounts" : "Tengdir aðgangar"
 },"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
 }

@@ -1,7 +1,6 @@
 { "translations": {
     "Bad HTTP method" : "Método HTTP incorrecto",
     "Bad credentials" : "Credenciais incorrectas",
-    "Connected accounts" : "Contas conectadas",
-    "..." : "..."
+    "Connected accounts" : "Contas conectadas"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Bad HTTP method" : "HTTP metodo okerra",
     "Bad credentials" : "Kredentzial okerrak",
-    "Connected accounts" : "Konektatutako kontuak",
-    "..." : "..."
+    "Connected accounts" : "Konektatutako kontuak"
 },
 "nplurals=2; plural=(n != 1);");

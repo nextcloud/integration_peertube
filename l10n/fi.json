@@ -1,7 +1,6 @@
 { "translations": {
     "Bad HTTP method" : "Virheellinen HTTP-metodi",
     "Bad credentials" : "Virheelliset kirjautumistiedot",
-    "Connected accounts" : "Yhdistetyt tilit",
-    "..." : "..."
+    "Connected accounts" : "Yhdistetyt tilit"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

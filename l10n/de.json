@@ -1,7 +1,6 @@
 { "translations": {
     "Bad HTTP method" : "Ungültige HTTP-Methode",
     "Bad credentials" : "Falsche Anmeldeinformationen",
-    "Connected accounts" : "Verbundene Konten",
-    "..." : "…"
+    "Connected accounts" : "Verbundene Konten"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

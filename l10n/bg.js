@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Bad HTTP method" : "Лош HTTP метод",
     "Bad credentials" : "Лоши идентификационни данни",
-    "Connected accounts" : "Свързани профили",
-    "..." : "..."
+    "Connected accounts" : "Свързани профили"
 },
 "nplurals=2; plural=(n != 1);");

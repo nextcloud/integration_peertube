@@ -1,7 +1,6 @@
 { "translations": {
     "Bad HTTP method" : "Κακή μέθοδος HTTP",
     "Bad credentials" : "Εσφαλμένα διαπιστευτήρια",
-    "Connected accounts" : "Συνδεδεμένοι λογαριασμοί",
-    "..." : "..."
+    "Connected accounts" : "Συνδεδεμένοι λογαριασμοί"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

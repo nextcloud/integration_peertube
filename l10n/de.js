@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Bad HTTP method" : "Ungültige HTTP-Methode",
     "Bad credentials" : "Falsche Anmeldeinformationen",
-    "Connected accounts" : "Verbundene Konten",
-    "..." : "…"
+    "Connected accounts" : "Verbundene Konten"
 },
 "nplurals=2; plural=(n != 1);");
