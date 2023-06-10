@@ -1,12 +1,14 @@
 OC.L10N.register(
     "integration_peertube",
     {
+    "PeerTube videos" : "PeerTube görüntüleri",
     "Bad HTTP method" : "HTTP yöntemi hatalı",
     "Bad credentials" : "Kimlik doğrulama bilgileri hatalı",
     "Connected accounts" : "Bağlı hesaplar",
     "Peertube integration" : "PeerTube bütünleştirmesi",
     "Integration of Peertube decentralized and federated video platform" : "PeerTube merkezi olmayan ve birleşik görüntü platformu bütünleştirmesi",
     "Peertube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "PeerTube bütünleştirmesi, görüntüleri aramak için akıllı bir seçici sağlayıcı \nve görüntü bağlantıları için bir bağlantı ön izleme pano gereci sağlar.",
+    "Peertube instance list (separated by commas or new lines)" : "PeerTube kopyaları listesi (virgül ya da satır sonu ile ayrılmış)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud, tüm bu kopyalar için görüntü bağlantılarını arayacak ve çözümleyecek.",
     "Peertube options saved" : "PeerTube ayarları kaydedildi",
     "Failed to save Peertube options" : "PeerTube ayarları kaydedilemedi",

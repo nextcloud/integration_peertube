@@ -1,12 +1,14 @@
 OC.L10N.register(
     "integration_peertube",
     {
+    "PeerTube videos" : "PeerTube videos",
     "Bad HTTP method" : "Bad HTTP method",
     "Bad credentials" : "Bad credentials",
     "Connected accounts" : "Connected accounts",
     "Peertube integration" : "Peertube integration",
     "Integration of Peertube decentralized and federated video platform" : "Integration of Peertube decentralized and federated video platform",
     "Peertube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Peertube integration provides a smart picker provider to search for videos\nand a link preview widget for video links.",
+    "Peertube instance list (separated by commas or new lines)" : "Peertube instance list (separated by commas or new lines)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud will search and resolve video links for all those instances.",
     "Peertube options saved" : "Peertube options saved",
     "Failed to save Peertube options" : "Failed to save Peertube options",
