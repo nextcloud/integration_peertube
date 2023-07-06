@@ -12,7 +12,7 @@
 				</label>
 				<textarea id="peertube-instances"
 					v-model="state.instances"
-					:placeholder="…"
+					placeholder="…"
 					@input="onInput" />
 			</div>
 			<p class="settings-hint">
