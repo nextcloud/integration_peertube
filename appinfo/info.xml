@@ -5,7 +5,7 @@
     <summary>Integration of Peertube decentralized and federated video platform</summary>
     <description><![CDATA[Peertube integration provides a smart picker provider to search for videos
 and a link preview widget for video links.]]></description>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <licence>agpl</licence>
     <author>Julien Veyssier</author>
     <namespace>Peertube</namespace>
