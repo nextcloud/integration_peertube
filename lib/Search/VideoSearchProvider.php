@@ -88,7 +88,7 @@ class VideoSearchProvider implements IProvider {
 		$requestedFromSmartPicker = $routeFrom === '' || $routeFrom === 'smart-picker';
 
 		if (!$requestedFromSmartPicker) {
-			$searchEnabled = $this->config->getUserValue($user->getUID(), Application::APP_ID, 'search_enabled', '1') === '1';
+			$searchEnabled = $this->config->getUserValue($user->getUID(), Application::APP_ID, 'search_enabled', '0') === '1';
 			if (!$searchEnabled) {
 				return SearchResult::paginated($this->getName(), [], 0);
 			}
