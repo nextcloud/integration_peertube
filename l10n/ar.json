@@ -6,7 +6,7 @@
     "Peertube integration" : "مُكاملة تطبيق \"بيرتيوب\" PeerTube للفيديو",
     "Integration of Peertube decentralized and federated video platform" : "مُكاملة تطبيق \"بيرتيوب\" PeerTube للفيديو و منصة فيديو اتحادية",
     "Peertube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "مُكاملة تطبيق \"بيرتيوب\" PeerTube للفيديو تُوفّر لاقطاً ذكيّاً smart pickerf للبحث في الفيديوهات، و رابطاً لوِدْج مُعاينة لروابط الفيديوهات.",
-    "Peertube instance list (separated by commas or new lines)" : "قائمة خادوم \"بير تيوب\" (تفصل عناصرها فواصل commas أو علامة سطر جديد new line).",
+    "Peertube instance list (separated by commas or new lines)" : "قائمة خادوم \"بير تيوب\" Peertube (تفصل عناصرها فواصل commas أو علامة سطر جديد new line).",
     "Nextcloud will search and resolve video links for all those instances." : "سوف تقوم نكست كلاود بالبحث و حل عناوين الفيديوهات في كل تلك الخوادم.",
     "Peertube options saved" : "تمّ بنجاح حفظ خيارات \"بير تيوب\" ",
     "Failed to save Peertube options" : "إخفاق في حفظ خيارات \"بير تيوب\"",
