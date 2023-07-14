@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info>
     <id>integration_peertube</id>
-    <name>Peertube integration</name>
+    <name>PeerTube integration</name>
     <summary>Integration of PeerTube decentralized and federated video platform</summary>
     <description><![CDATA[PeerTube integration provides a smart picker provider to search for videos
 and a link preview widget for video links.]]></description>
