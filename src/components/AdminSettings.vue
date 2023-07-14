@@ -2,7 +2,7 @@
 	<div id="peertube_prefs" class="section">
 		<h2>
 			<PeertubeIcon class="icon" />
-			{{ t('integration_peertube', 'Peertube integration') }}
+			{{ t('integration_peertube', 'PeerTube integration') }}
 		</h2>
 		<div id="peertube-content">
 			<div class="line">
