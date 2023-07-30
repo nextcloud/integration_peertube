@@ -2,24 +2,24 @@
 	<div id="peertube_prefs" class="section">
 		<h2>
 			<PeertubeIcon class="icon" />
-			{{ t('integration_peertube', 'Peertube integration') }}
+			{{ t('integration_peertube', 'PeerTube integration') }}
 		</h2>
 		<div id="peertube-content">
 			<div id="peertube-search-block">
 				<NcCheckboxRadioSwitch
 					:checked="state.search_enabled"
 					@update:checked="onCheckboxChanged($event, 'search_enabled')">
-					{{ t('integration_peertube', 'Enable searching for Peertube videos') }}
+					{{ t('integration_peertube', 'Enable searching for PeerTube videos') }}
 				</NcCheckboxRadioSwitch>
 				<br>
 				<p v-if="state.search_enabled" class="settings-hint">
 					<InformationOutlineIcon :size="20" class="icon" />
-					{{ t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some Peertube instances.') }}
+					{{ t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some PeerTube instances.') }}
 				</p>
 				<NcCheckboxRadioSwitch
 					:checked="state.link_preview_enabled"
 					@update:checked="onCheckboxChanged($event, 'link_preview_enabled')">
-					{{ t('integration_peertube', 'Enable Peertube video link previews') }}
+					{{ t('integration_peertube', 'Enable PeerTube video link previews') }}
 				</NcCheckboxRadioSwitch>
 			</div>
 		</div>

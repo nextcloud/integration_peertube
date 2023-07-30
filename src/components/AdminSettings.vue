@@ -2,13 +2,13 @@
 	<div id="peertube_prefs" class="section">
 		<h2>
 			<PeertubeIcon class="icon" />
-			{{ t('integration_peertube', 'Peertube integration') }}
+			{{ t('integration_peertube', 'PeerTube integration') }}
 		</h2>
 		<div id="peertube-content">
 			<div class="line">
 				<label for="peertube-instances">
 					<EarthIcon :size="20" class="icon" />
-					{{ t('integration_peertube', 'Peertube instance list (separated by commas or new lines)') }}
+					{{ t('integration_peertube', 'PeerTube instance list (separated by commas or new lines)') }}
 				</label>
 				<textarea id="peertube-instances"
 					v-model="state.instances"
@@ -77,10 +77,10 @@ export default {
 			}
 			const url = generateUrl('/apps/integration_peertube/admin-config')
 			axios.put(url, req).then((response) => {
-				showSuccess(t('integration_peertube', 'Peertube options saved'))
+				showSuccess(t('integration_peertube', 'PeerTube options saved'))
 			}).catch((error) => {
 				showError(
-					t('integration_peertube', 'Failed to save Peertube options')
+					t('integration_peertube', 'Failed to save PeerTube options')
 					+ ': ' + (error.response?.data?.error ?? '')
 				)
 				console.error(error)
