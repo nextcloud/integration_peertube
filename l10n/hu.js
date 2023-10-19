@@ -8,6 +8,8 @@ OC.L10N.register(
     "PeerTube integration" : "PeerTube integráció",
     "Nextcloud will search and resolve video links for all those instances." : "A Nextcloud megkeresi és feloldja ezen példányok videóhivatkozásait.",
     "PeerTube options saved" : "A PeerTube beállításai mentve",
-    "Failed to save PeerTube options" : "Nem sikerült a PeerTube beállításainak mentése"
+    "Failed to save PeerTube options" : "Nem sikerült a PeerTube beállításainak mentése",
+    "Enable searching for PeerTube videos" : "A PeerTube videók keresésének engedélyezése",
+    "Enable PeerTube video link previews" : "PeerTube videóhivatkozás-előnézetek engedélyezése"
 },
 "nplurals=2; plural=(n != 1);");
