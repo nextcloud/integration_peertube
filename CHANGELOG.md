@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## 1.0.3 – 2024-03-11
+
+Maintenance update
+
+### Changed
+
+- Updated npm packages
+- Updated l10n (localization)
+
 ## 1.0.2 – 2023-11-02
 
 Maintenance update
