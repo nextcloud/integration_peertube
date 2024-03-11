@@ -79,10 +79,8 @@ export default {
 			axios.put(url, req).then((response) => {
 				showSuccess(t('integration_peertube', 'PeerTube options saved'))
 			}).catch((error) => {
-				showError(
-					t('integration_peertube', 'Failed to save PeerTube options')
-					+ ': ' + (error.response?.data?.error ?? '')
-				)
+				showError(t('integration_peertube', 'Failed to save PeerTube options')
+					+ ': ' + (error.response?.data?.error ?? ''))
 				console.error(error)
 			}).then(() => {
 				this.loading = false
