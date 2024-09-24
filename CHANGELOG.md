@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## 1.1.0 – 2024-09-25
+
+### Changed
+
+- Updated npm packages
+- Drop support for NC 26, 27
+
+### Fixed
+
+- Corrected error handling and work with the empty PeerTube instance list 
+
 ## 1.0.4 – 2024-07-25
 
 Maintenance update
