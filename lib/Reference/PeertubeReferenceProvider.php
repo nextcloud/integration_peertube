@@ -110,10 +110,19 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 		if ($this->matchReference($referenceText)) {
 			try {
 				$urlInfo = $this->getInfoFromVideoUrl($referenceText);
+				if ($urlInfo === null ) {
+					return $this->linkReferenceProvider->resolveReference($referenceText);
+				}
 				$videoId = $urlInfo['video_id'];
 				$instanceUrl = $urlInfo['instance_url'];
+				if (empty($instanceUrl)) {
+					return $this->linkReferenceProvider->resolveReference($referenceText);
+				}
 
 				$videoInfo = $this->peertubeAPIService->getVideoInfo($instanceUrl, $videoId);
+				if (!empty($videoInfo['error'])) {
+					return $this->linkReferenceProvider->resolveReference($referenceText);
+				}
 				$videoInfo['embed_url'] = $instanceUrl . $videoInfo['embedPath'];
 				$reference = new Reference($referenceText);
 				$reference->setTitle($videoInfo['name'] ?? '???');
