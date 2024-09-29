@@ -1,3 +1,7 @@
+<!--
+  - SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: CC0-1.0
+-->
 # Peertube integration in Nextcloud
 
 This app adds a search provider for videos as well as a reference provider and a reference widget.

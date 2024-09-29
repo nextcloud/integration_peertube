@@ -1,10 +1,7 @@
 <?php
 /**
- * Nextcloud - Peertube
- *
- *
- * @author Julien Veyssier <julien-nc@posteo.net>
- * @copyright Julien Veyssier 2023
+ * SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
 namespace OCA\Peertube\AppInfo;
