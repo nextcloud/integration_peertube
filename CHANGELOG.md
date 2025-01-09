@@ -10,6 +10,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## 1.1.0 – 2025-01-09
+
+Maintenance update. Add NC31 support.
+
+### Added
+
+- Nextcloud 31 support
+
+### Changed
+
+- Updated npm packages
+
+
 ## 1.1.0 – 2024-09-25
 
 ### Changed
