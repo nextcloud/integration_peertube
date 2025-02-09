@@ -1,4 +1,5 @@
 { "translations": {
+    "Bad credentials" : "Forkerte legitimationsoplysninger",
     "Connected accounts" : "Forbundne konti"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
