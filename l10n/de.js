@@ -6,7 +6,7 @@ OC.L10N.register(
     "Bad credentials" : "Falsche Anmeldeinformationen",
     "Connected accounts" : "Verbundene Konten",
     "PeerTube integration" : "PeerTube-Integration",
-    "Integration of PeerTube decentralized and federated video platform" : "Integration der dezentralen und föderierten Videoplattform PeerTube",
+    "Integration of PeerTube decentralized and federated video platform" : "Integration der dezentralen und federierten Videoplattform PeerTube",
     "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Die PeerTube-Integration bietet einen Smart Picker-Anbieter für die Suche nach Videos \nund ein Linkvorschau-Widget für Videolinks.",
     "PeerTube instance list (separated by commas or new lines)" : "Liste der PeerTube-Instanzen (durch Kommata oder Zeilenumbrüche getrennt)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud sucht Videolinks für alle diese Instanzen und löst sie auf.",
