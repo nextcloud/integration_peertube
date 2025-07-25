@@ -1,6 +1,17 @@
 { "translations": {
+    "PeerTube videos" : "Video za PeerTube",
     "Bad HTTP method" : "Njia mbaya ya HTTP ",
     "Bad credentials" : "Sifa mbaya",
-    "Connected accounts" : "Akaunti zilizounganishwa"
+    "Connected accounts" : "Akaunti zilizounganishwa",
+    "PeerTube integration" : "Ushirikiano wa PeerTube ",
+    "Integration of PeerTube decentralized and federated video platform" : "Ujumuishaji wa jukwaa la video la PeerTube lililogatuliwa na shirikisho",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Ushirikiano wa PeerTube unatoa mtoa huduma mahiri kutafuta video\nna wijeti ya onyesho la kukagua kiungo kwa viungo vya video.",
+    "PeerTube options saved" : "Chaguo za PeerTube zimehifadhiwa",
+    "Failed to save PeerTube options" : "Imeshindwa kuhifadhi chaguo za PeerTube",
+    "PeerTube instance list (separated by commas or new lines)" : "Orodha ya mifano ya PeerTube (imetenganishwa na koma au mistari mipya)",
+    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud itatafuta na kutatua viungo vya video kwa matukio hayo yote.",
+    "Enable searching for PeerTube videos" : "Washa utafutaji wa video za PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Onyo, kila kitu unachoandika kwenye upau wa kutafutia kitatumwa kwa baadhi ya matukio ya PeerTube.",
+    "Enable PeerTube video link previews" : "Washa onyesho la kukagua viungo vya video ya PeerTube"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
