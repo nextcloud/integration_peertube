@@ -1,8 +1,19 @@
 OC.L10N.register(
     "integration_peertube",
     {
+    "PeerTube videos" : "Відео на PeerTube",
     "Bad HTTP method" : "Поганий метод HTTP",
     "Bad credentials" : "Погані облікові дані",
-    "Connected accounts" : "Підключені облікові записи"
+    "Connected accounts" : "Підключені облікові записи",
+    "PeerTube integration" : "Інтеграція з PeerTube",
+    "Integration of PeerTube decentralized and federated video platform" : "Інтеграція децентралізованої та федеративної відеоплатформи PeerTube",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Інтеграція PeerTube надає інтелектуальний вибір для пошуку відео\nта віджет попереднього перегляду посилань для відеопосилань.",
+    "PeerTube options saved" : "Параметри PeerTube збережено",
+    "Failed to save PeerTube options" : "Не вдалося зберегти параметри PeerTube",
+    "PeerTube instance list (separated by commas or new lines)" : "Список екземплярів PeerTube (через кому або з нового рядка)",
+    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud буде шукати і вирішувати відеопосилання для всіх цих випадків.",
+    "Enable searching for PeerTube videos" : "Увімкнути пошук відео на PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Увага, все, що ви введете в рядок пошуку, буде надіслано деяким екземплярам PeerTube.",
+    "Enable PeerTube video link previews" : "Ввімкнути попередній перегляд відеопосилань PeerTube"
 },
 "nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);");
