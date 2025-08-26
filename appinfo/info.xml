@@ -24,7 +24,7 @@ and a link preview widget for video links.]]></description>
     <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot3.jpg</screenshot>
     <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot4.jpg</screenshot>
     <dependencies>
-        <nextcloud min-version="28" max-version="31"/>
+        <nextcloud min-version="28" max-version="32"/>
     </dependencies>
     <settings>
         <admin>OCA\Peertube\Settings\Admin</admin>
