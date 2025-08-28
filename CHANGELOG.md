@@ -10,7 +10,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## 1.1.0 – 2025-01-09
+## 1.3.0 – 2025-08-29
+
+### Added
+- search providers marked as external sources 
+
+### Changed
+- npm packages updated 
+- max NC version bumped to 32
+- CSP Nonce updated
+
+## 1.2.0 – 2025-01-09
 
 Maintenance update. Add NC31 support.
 
