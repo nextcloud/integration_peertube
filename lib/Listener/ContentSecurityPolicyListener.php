@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -12,9 +13,14 @@ use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 
+/**
+ * @template-implements IEventListener<AddContentSecurityPolicyEvent>
+ */
 class ContentSecurityPolicyListener implements IEventListener {
 
-	public function __construct(private PeertubeAPIService $peertubeAPIService) {
+	public function __construct(
+		private PeertubeAPIService $peertubeAPIService,
+	) {
 	}
 
 	/**

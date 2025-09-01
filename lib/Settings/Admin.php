@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -6,18 +7,20 @@
 
 namespace OCA\Peertube\Settings;
 
+use OCA\Peertube\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IInitialState;
 use OCP\IConfig;
-use OCP\Settings\ISettings;
 
-use OCA\Peertube\AppInfo\Application;
+use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
 
-	public function __construct(private IConfig       $config,
-								private IInitialState $initialStateService,
-								?string               $userId) {
+	public function __construct(
+		private IConfig $config,
+		private IInitialState $initialStateService,
+		?string $userId,
+	) {
 	}
 
 	/**

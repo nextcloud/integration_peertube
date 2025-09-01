@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace OCA\Peertube\Search;
 
-use OCA\Peertube\Service\PeertubeAPIService;
 use OCA\Peertube\AppInfo\Application;
+use OCA\Peertube\Service\PeertubeAPIService;
 use OCP\App\IAppManager;
-use OCP\IL10N;
 use OCP\IConfig;
+use OCP\IL10N;
 use OCP\IURLGenerator;
 use OCP\IUser;
 use OCP\Search\IExternalProvider;
@@ -23,11 +23,13 @@ use OCP\Search\SearchResultEntry;
 
 class VideoSearchProvider implements IProvider, IExternalProvider {
 
-	public function __construct(private IAppManager        $appManager,
-								private IL10N              $l10n,
-								private IConfig            $config,
-								private IURLGenerator      $urlGenerator,
-								private PeertubeAPIService $peertubeAPIService) {
+	public function __construct(
+		private IAppManager $appManager,
+		private IL10N $l10n,
+		private IConfig $config,
+		private IURLGenerator $urlGenerator,
+		private PeertubeAPIService $peertubeAPIService,
+	) {
 	}
 
 	/**
@@ -135,6 +137,6 @@ class VideoSearchProvider implements IProvider, IExternalProvider {
 	}
 
 	public function isExternalProvider(): bool {
-		return True;
+		return true;
 	}
 }

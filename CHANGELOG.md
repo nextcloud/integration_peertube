@@ -8,7 +8,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## 2.0.0 – 2025-09-01
+
+### Changed
+
+- Drop support for NC < 32
+- Add psalm-matrix check
 
 ## 1.3.0 – 2025-08-29
 
