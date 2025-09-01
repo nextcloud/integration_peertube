@@ -8,7 +8,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## 1.3.1 – 2025-09-01
+
+### Changed
+
+- Do not use IExternalProvider anymore
+- Lower max NC version to 31
 
 ## 1.3.0 – 2025-08-29
 
