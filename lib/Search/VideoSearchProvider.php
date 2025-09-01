@@ -15,13 +15,12 @@ use OCP\IL10N;
 use OCP\IConfig;
 use OCP\IURLGenerator;
 use OCP\IUser;
-use OCP\Search\IExternalProvider;
 use OCP\Search\IProvider;
 use OCP\Search\ISearchQuery;
 use OCP\Search\SearchResult;
 use OCP\Search\SearchResultEntry;
 
-class VideoSearchProvider implements IProvider, IExternalProvider {
+class VideoSearchProvider implements IProvider {
 
 	public function __construct(private IAppManager        $appManager,
 								private IL10N              $l10n,
@@ -132,9 +131,5 @@ class VideoSearchProvider implements IProvider, IExternalProvider {
 				'fallbackName' => $entry['name'],
 			]
 		);
-	}
-
-	public function isExternalProvider(): bool {
-		return True;
 	}
 }
