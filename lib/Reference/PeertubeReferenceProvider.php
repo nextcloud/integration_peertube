@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -7,14 +8,14 @@
 namespace OCA\Peertube\Reference;
 
 use Exception;
+use OCA\Peertube\AppInfo\Application;
+use OCA\Peertube\Service\PeertubeAPIService;
 use OCP\Collaboration\Reference\ADiscoverableReferenceProvider;
+use OCP\Collaboration\Reference\IReference;
 use OCP\Collaboration\Reference\IReferenceManager;
 use OCP\Collaboration\Reference\ISearchableReferenceProvider;
 use OCP\Collaboration\Reference\LinkReferenceProvider;
 use OCP\Collaboration\Reference\Reference;
-use OCA\Peertube\AppInfo\Application;
-use OCA\Peertube\Service\PeertubeAPIService;
-use OCP\Collaboration\Reference\IReference;
 use OCP\IConfig;
 use OCP\IL10N;
 
@@ -32,14 +33,14 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 		private IURLGenerator $urlGenerator,
 		private IReferenceManager $referenceManager,
 		private LinkReferenceProvider $linkReferenceProvider,
-		private ?string $userId
+		private ?string $userId,
 	) {
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getId(): string	{
+	public function getId(): string {
 		return 'peertube-videos';
 	}
 
@@ -53,7 +54,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 	/**
 	 * @inheritDoc
 	 */
-	public function getOrder(): int	{
+	public function getOrder(): int {
 		return 10;
 	}
 
@@ -96,7 +97,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 		if ($this->matchReference($referenceText)) {
 			try {
 				$urlInfo = $this->getInfoFromVideoUrl($referenceText);
-				if ($urlInfo === null ) {
+				if ($urlInfo === null) {
 					return $this->linkReferenceProvider->resolveReference($referenceText);
 				}
 				$videoId = $urlInfo['video_id'];
@@ -126,7 +127,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 					$videoInfo
 				);
 				return $reference;
-			} catch (Exception | Throwable $e) {
+			} catch (Exception|Throwable $e) {
 				// fallback to opengraph
 				return $this->linkReferenceProvider->resolveReference($referenceText);
 			}

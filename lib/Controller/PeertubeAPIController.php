@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -6,15 +7,15 @@
 
 namespace OCA\Peertube\Controller;
 
+use OCA\Peertube\Service\PeertubeAPIService;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\Attribute\NoAdminRequired;
 use OCP\AppFramework\Http\Attribute\NoCSRFRequired;
 use OCP\AppFramework\Http\DataDownloadResponse;
 use OCP\AppFramework\Http\RedirectResponse;
 use OCP\AppFramework\Http\Response;
-use OCP\IRequest;
 
-use OCA\Peertube\Service\PeertubeAPIService;
+use OCP\IRequest;
 use OCP\IURLGenerator;
 
 class PeertubeAPIController extends Controller {
@@ -24,7 +25,7 @@ class PeertubeAPIController extends Controller {
 		IRequest $request,
 		private PeertubeAPIService $peertubeAPIService,
 		private IURLGenerator $urlGenerator,
-		?string $userId
+		?string $userId,
 	) {
 		parent::__construct($appName, $request);
 	}
