@@ -12,6 +12,9 @@ use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Util;
 
+/**
+ * @template-implements IEventListener<RenderReferenceEvent>
+ */
 class PeertubeReferenceListener implements IEventListener {
 
 	public function __construct() {

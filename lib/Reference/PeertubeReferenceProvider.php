@@ -7,11 +7,11 @@
 namespace OCA\Peertube\Reference;
 
 use Exception;
-use OC\Collaboration\Reference\LinkReferenceProvider;
 use OCP\Collaboration\Reference\ADiscoverableReferenceProvider;
+use OCP\Collaboration\Reference\IReferenceManager;
 use OCP\Collaboration\Reference\ISearchableReferenceProvider;
+use OCP\Collaboration\Reference\LinkReferenceProvider;
 use OCP\Collaboration\Reference\Reference;
-use OC\Collaboration\Reference\ReferenceManager;
 use OCA\Peertube\AppInfo\Application;
 use OCA\Peertube\Service\PeertubeAPIService;
 use OCP\Collaboration\Reference\IReference;
@@ -25,13 +25,15 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 
 	private const RICH_OBJECT_TYPE_VIDEO = Application::APP_ID . '_video';
 
-	public function __construct(private PeertubeAPIService $peertubeAPIService,
-								private IConfig $config,
-								private IL10N $l10n,
-								private IURLGenerator $urlGenerator,
-								private ReferenceManager $referenceManager,
-								private LinkReferenceProvider $linkReferenceProvider,
-								private ?string $userId) {
+	public function __construct(
+		private PeertubeAPIService $peertubeAPIService,
+		private IConfig $config,
+		private IL10N $l10n,
+		private IURLGenerator $urlGenerator,
+		private IReferenceManager $referenceManager,
+		private LinkReferenceProvider $linkReferenceProvider,
+		private ?string $userId
+	) {
 	}
 
 	/**

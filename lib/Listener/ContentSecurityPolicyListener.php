@@ -12,6 +12,9 @@ use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 
+/**
+ * @template-implements IEventListener<AddContentSecurityPolicyEvent>
+ */
 class ContentSecurityPolicyListener implements IEventListener {
 
 	public function __construct(private PeertubeAPIService $peertubeAPIService) {
