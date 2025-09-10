@@ -7,7 +7,7 @@ OC.L10N.register(
     "Connected accounts" : "Comptes connectés",
     "PeerTube integration" : "Intégration PeerTube",
     "Integration of PeerTube decentralized and federated video platform" : "Intégration de la plateforme décentralisée et fédérée de PeerTube",
-    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "L’intégration PeerTube propose un fournisseur de sélection intelligente pour rechercher des vidéos\net un composant de prévisualisation des liens vidéo.",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "L’intégration PeerTube propose un fournisseur de sélection intelligente pour rechercher des vidéos\net un widget de prévisualisation des liens vidéo.",
     "PeerTube options saved" : "Options PeerTube enregistrées",
     "Failed to save PeerTube options" : "Échec de l'enregistrement des options PeerTube",
     "PeerTube instance list (separated by commas or new lines)" : "Liste des instances PeerTube (séparées par des virgules ou par des retours à la ligne)",
