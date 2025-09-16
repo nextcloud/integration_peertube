@@ -18,7 +18,8 @@
 				<NcLoadingIcon v-if="loading" :size="20" class="icon" />
 			</div>
 			<div class="line">
-				<textarea id="peertube-instances"
+				<textarea
+					id="peertube-instances"
 					v-model="state.instances"
 					placeholder="…"
 					@input="onInput" />
@@ -32,16 +33,14 @@
 </template>
 
 <script>
-import EarthIcon from 'vue-material-design-icons/Earth.vue'
-import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
-import PeertubeIcon from './icons/PeertubeIcon.vue'
-
-import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
-
 import axios from '@nextcloud/axios'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
+import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
+import EarthIcon from 'vue-material-design-icons/Earth.vue'
+import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
+import PeertubeIcon from './icons/PeertubeIcon.vue'
 import { delay } from '../utils.js'
 
 export default {
@@ -80,13 +79,14 @@ export default {
 				})
 			}, 2000)()
 		},
+
 		saveOptions(values) {
 			this.loading = true
 			const req = {
 				values,
 			}
 			const url = generateUrl('/apps/integration_peertube/admin-config')
-			axios.put(url, req).then((response) => {
+			axios.put(url, req).then(() => {
 				showSuccess(t('integration_peertube', 'PeerTube options saved'))
 			}).catch((error) => {
 				showError(t('integration_peertube', 'Failed to save PeerTube options')
@@ -102,10 +102,10 @@ export default {
 
 <style scoped lang="scss">
 #peertube_prefs {
-	margin-left: 12px;
+	margin-inline-start: 12px;
 
 	#peertube-content {
-		margin-left: 32px;
+		margin-inline-start: 32px;
 		max-width: 800px;
 	}
 
@@ -116,7 +116,7 @@ export default {
 		justify-content: start;
 		align-items: center;
 		.icon {
-			margin-right: 4px;
+			margin-inline-end: 4px;
 		}
 	}
 
@@ -126,7 +126,7 @@ export default {
 	}
 
 	h2 .icon {
-		margin-right: 8px;
+		margin-inline-end: 8px;
 	}
 
 	#peertube-instances {

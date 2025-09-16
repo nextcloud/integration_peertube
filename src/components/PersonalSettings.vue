@@ -16,7 +16,8 @@
 					@update:model-value="onCheckboxChanged($event, 'search_enabled')">
 					{{ t('integration_peertube', 'Enable searching for PeerTube videos') }}
 				</NcCheckboxRadioSwitch>
-				<NcNoteCard v-if="state.search_enabled"
+				<NcNoteCard
+					v-if="state.search_enabled"
 					type="warning"
 					class="settings-hint"
 					:text="t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some PeerTube instances.')" />
@@ -31,16 +32,13 @@
 </template>
 
 <script>
-import PeertubeIcon from './icons/PeertubeIcon.vue'
-
 import axios from '@nextcloud/axios'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
-
+import PeertubeIcon from './icons/PeertubeIcon.vue'
 import { delay } from '../utils.js'
 
 export default {
@@ -77,16 +75,18 @@ export default {
 				})
 			}, 2000)()
 		},
+
 		onCheckboxChanged(newValue, key) {
 			this.state[key] = newValue
 			this.saveOptions({ [key]: this.state[key] ? '1' : '0' })
 		},
+
 		saveOptions(values) {
 			const req = {
 				values,
 			}
 			const url = generateUrl('/apps/integration_peertube/config')
-			axios.put(url, req).then((response) => {
+			axios.put(url, req).then(() => {
 				showSuccess(t('integration_peertube', 'PeerTube options saved'))
 			}).catch((error) => {
 				showError(t('integration_peertube', 'Failed to save PeerTube options')
@@ -100,10 +100,10 @@ export default {
 
 <style scoped lang="scss">
 #peertube_prefs {
-	margin-left: 12px;
+	margin-inline-start: 12px;
 
 	#peertube-content {
-		margin-left: 32px;
+		margin-inline-start: 32px;
 		max-width: 800px;
 	}
 
@@ -113,16 +113,16 @@ export default {
 		justify-content: start;
 		align-items: center;
 		.icon {
-			margin-right: 4px;
+			margin-inline-end: 4px;
 		}
 	}
 
 	.settings-hint {
-		margin-left: 32px;
+		margin-inline-start: 32px;
 	}
 
 	h2 .icon {
-		margin-right: 8px;
+		margin-inline-end: 8px;
 	}
 }
 </style>
