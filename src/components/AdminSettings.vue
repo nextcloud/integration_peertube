@@ -4,7 +4,7 @@
 -->
 
 <template>
-	<div id="peertube_prefs" class="section">
+	<div id="peertube_prefs" class="settings-section">
 		<h2>
 			<PeertubeIcon class="icon" />
 			{{ t('integration_peertube', 'PeerTube integration') }}
@@ -36,7 +36,7 @@ import EarthIcon from 'vue-material-design-icons/Earth.vue'
 import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
 import PeertubeIcon from './icons/PeertubeIcon.vue'
 
-import NcLoadingIcon from '@nextcloud/vue/dist/Components/NcLoadingIcon.js'
+import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
 
 import axios from '@nextcloud/axios'
 import { showError, showSuccess } from '@nextcloud/dialogs'
@@ -102,19 +102,27 @@ export default {
 
 <style scoped lang="scss">
 #peertube_prefs {
+	margin-left: 12px;
+
 	#peertube-content {
-		margin: 24px 0 0 32px;
+		margin-left: 32px;
+		max-width: 800px;
 	}
+
 	h2,
 	.line,
 	.settings-hint {
 		display: flex;
 		justify-content: start;
 		align-items: center;
-		margin-top: 12px;
 		.icon {
 			margin-right: 4px;
 		}
+	}
+
+	.line,
+	.settings-hint {
+		margin-top: 12px;
 	}
 
 	h2 .icon {
@@ -127,6 +135,7 @@ export default {
 	}
 
 	.line {
+		gap: 4px;
 		> label {
 			display: flex;
 			align-items: center;

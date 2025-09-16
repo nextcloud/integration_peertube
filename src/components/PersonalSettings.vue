@@ -4,7 +4,7 @@
 -->
 
 <template>
-	<div id="peertube_prefs" class="section">
+	<div id="peertube_prefs" class="settings-section">
 		<h2>
 			<PeertubeIcon class="icon" />
 			{{ t('integration_peertube', 'PeerTube integration') }}
@@ -12,8 +12,8 @@
 		<div id="peertube-content">
 			<div id="peertube-search-block">
 				<NcCheckboxRadioSwitch
-					:checked="state.search_enabled"
-					@update:checked="onCheckboxChanged($event, 'search_enabled')">
+					:model-value="state.search_enabled"
+					@update:model-value="onCheckboxChanged($event, 'search_enabled')">
 					{{ t('integration_peertube', 'Enable searching for PeerTube videos') }}
 				</NcCheckboxRadioSwitch>
 				<NcNoteCard v-if="state.search_enabled"
@@ -21,8 +21,8 @@
 					class="settings-hint"
 					:text="t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some PeerTube instances.')" />
 				<NcCheckboxRadioSwitch
-					:checked="state.link_preview_enabled"
-					@update:checked="onCheckboxChanged($event, 'link_preview_enabled')">
+					:model-value="state.link_preview_enabled"
+					@update:model-value="onCheckboxChanged($event, 'link_preview_enabled')">
 					{{ t('integration_peertube', 'Enable PeerTube video link previews') }}
 				</NcCheckboxRadioSwitch>
 			</div>
@@ -38,8 +38,9 @@ import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
 
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
-import NcNoteCard from '@nextcloud/vue/dist/Components/NcNoteCard.js'
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
+import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
+
 import { delay } from '../utils.js'
 
 export default {
@@ -99,9 +100,13 @@ export default {
 
 <style scoped lang="scss">
 #peertube_prefs {
+	margin-left: 12px;
+
 	#peertube-content {
 		margin-left: 32px;
+		max-width: 800px;
 	}
+
 	h2,
 	.settings-hint {
 		display: flex;
@@ -113,7 +118,7 @@ export default {
 	}
 
 	.settings-hint {
-		margin-left: 2.5rem;
+		margin-left: 32px;
 	}
 
 	h2 .icon {
