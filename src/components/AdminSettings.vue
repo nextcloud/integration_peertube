@@ -15,6 +15,9 @@
 					<EarthIcon :size="20" class="icon" />
 					{{ t('integration_peertube', 'PeerTube instance list (separated by commas or new lines)') }}
 				</label>
+				<NcLoadingIcon v-if="loading" :size="20" class="icon" />
+			</div>
+			<div class="line">
 				<textarea id="peertube-instances"
 					v-model="state.instances"
 					placeholder="…"
@@ -29,16 +32,17 @@
 </template>
 
 <script>
-import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
 import EarthIcon from 'vue-material-design-icons/Earth.vue'
-
+import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
 import PeertubeIcon from './icons/PeertubeIcon.vue'
 
+import NcLoadingIcon from '@nextcloud/vue/dist/Components/NcLoadingIcon.js'
+
+import axios from '@nextcloud/axios'
+import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import axios from '@nextcloud/axios'
 import { delay } from '../utils.js'
-import { showSuccess, showError } from '@nextcloud/dialogs'
 
 export default {
 	name: 'AdminSettings',
@@ -47,6 +51,7 @@ export default {
 		PeertubeIcon,
 		EarthIcon,
 		InformationOutlineIcon,
+		NcLoadingIcon,
 	},
 
 	props: [],
@@ -69,7 +74,6 @@ export default {
 
 	methods: {
 		onInput() {
-			this.loading = true
 			delay(() => {
 				this.saveOptions({
 					instances: this.state.instances,
@@ -77,6 +81,7 @@ export default {
 			}, 2000)()
 		},
 		saveOptions(values) {
+			this.loading = true
 			const req = {
 				values,
 			}
@@ -87,7 +92,7 @@ export default {
 				showError(t('integration_peertube', 'Failed to save PeerTube options')
 					+ ': ' + (error.response?.data?.error ?? ''))
 				console.error(error)
-			}).then(() => {
+			}).finally(() => {
 				this.loading = false
 			})
 		},
@@ -98,12 +103,13 @@ export default {
 <style scoped lang="scss">
 #peertube_prefs {
 	#peertube-content {
-		margin-left: 40px;
+		margin: 24px 0 0 32px;
 	}
 	h2,
 	.line,
 	.settings-hint {
 		display: flex;
+		justify-content: start;
 		align-items: center;
 		margin-top: 12px;
 		.icon {
@@ -116,13 +122,12 @@ export default {
 	}
 
 	#peertube-instances {
-		width: 350px;
+		width: 550px;
 		height: 100px;
 	}
 
 	.line {
 		> label {
-			width: 300px;
 			display: flex;
 			align-items: center;
 		}

@@ -16,11 +16,10 @@
 					@update:checked="onCheckboxChanged($event, 'search_enabled')">
 					{{ t('integration_peertube', 'Enable searching for PeerTube videos') }}
 				</NcCheckboxRadioSwitch>
-				<br>
-				<p v-if="state.search_enabled" class="settings-hint">
-					<InformationOutlineIcon :size="20" class="icon" />
-					{{ t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some PeerTube instances.') }}
-				</p>
+				<NcNoteCard v-if="state.search_enabled"
+					type="warning"
+					class="settings-hint"
+					:text="t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some PeerTube instances.')" />
 				<NcCheckboxRadioSwitch
 					:checked="state.link_preview_enabled"
 					@update:checked="onCheckboxChanged($event, 'link_preview_enabled')">
@@ -32,16 +31,15 @@
 </template>
 
 <script>
-import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
-
 import PeertubeIcon from './icons/PeertubeIcon.vue'
 
+import axios from '@nextcloud/axios'
+import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import axios from '@nextcloud/axios'
-import { showSuccess, showError } from '@nextcloud/dialogs'
 
 import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
+import NcNoteCard from '@nextcloud/vue/dist/Components/NcNoteCard.js'
 import { delay } from '../utils.js'
 
 export default {
@@ -50,7 +48,7 @@ export default {
 	components: {
 		PeertubeIcon,
 		NcCheckboxRadioSwitch,
-		InformationOutlineIcon,
+		NcNoteCard,
 	},
 
 	props: [],
@@ -58,7 +56,6 @@ export default {
 	data() {
 		return {
 			state: loadState('integration_peertube', 'user-config'),
-			loading: false,
 		}
 	},
 
@@ -73,7 +70,6 @@ export default {
 
 	methods: {
 		onInput() {
-			this.loading = true
 			delay(() => {
 				this.saveOptions({
 					api_key: this.state.api_key,
@@ -104,31 +100,24 @@ export default {
 <style scoped lang="scss">
 #peertube_prefs {
 	#peertube-content {
-		margin-left: 40px;
+		margin-left: 32px;
 	}
 	h2,
-	.line,
 	.settings-hint {
 		display: flex;
+		justify-content: start;
 		align-items: center;
 		.icon {
 			margin-right: 4px;
 		}
 	}
 
-	h2 .icon {
-		margin-right: 8px;
+	.settings-hint {
+		margin-left: 2.5rem;
 	}
 
-	.line {
-		> label {
-			width: 300px;
-			display: flex;
-			align-items: center;
-		}
-		> input {
-			width: 300px;
-		}
+	h2 .icon {
+		margin-right: 8px;
 	}
 }
 </style>
