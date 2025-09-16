@@ -4,8 +4,7 @@
 -->
 
 <template>
-	<iframe
-		:title="richObject.name"
+	<iframe :title="richObject.name"
 		:src="richObject.embed_url"
 		:allowfullscreen="true"
 		sandbox="allow-same-origin allow-scripts allow-popups"
