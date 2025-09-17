@@ -11,7 +11,7 @@ namespace OCA\Peertube\Search;
 use OCA\Peertube\AppInfo\Application;
 use OCA\Peertube\Service\PeertubeAPIService;
 use OCP\App\IAppManager;
-use OCP\IConfig;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\IL10N;
 use OCP\IURLGenerator;
 use OCP\IUser;
@@ -26,7 +26,7 @@ class VideoSearchProvider implements IProvider, IExternalProvider {
 	public function __construct(
 		private IAppManager $appManager,
 		private IL10N $l10n,
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private IURLGenerator $urlGenerator,
 		private PeertubeAPIService $peertubeAPIService,
 	) {
@@ -75,7 +75,7 @@ class VideoSearchProvider implements IProvider, IExternalProvider {
 		$requestedFromSmartPicker = $routeFrom === '' || $routeFrom === 'smart-picker';
 
 		if (!$requestedFromSmartPicker) {
-			$searchEnabled = $this->config->getUserValue($user->getUID(), Application::APP_ID, 'search_enabled', '0') === '1';
+			$searchEnabled = $this->appConfig->getUserValue($user->getUID(), 'search_enabled', '0') === '1';
 			if (!$searchEnabled) {
 				return SearchResult::paginated($this->getName(), [], 0);
 			}

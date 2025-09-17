@@ -11,9 +11,9 @@ use Exception;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use OCA\Peertube\AppInfo\Application;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\Http\Client\IClient;
 use OCP\Http\Client\IClientService;
-use OCP\IConfig;
 use OCP\IL10N;
 use OCP\L10N\IFactory;
 use Psr\Log\LoggerInterface;
@@ -30,7 +30,7 @@ class PeertubeAPIService {
 		string $appName,
 		private LoggerInterface $logger,
 		private IL10N $l10n,
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private IFactory $l10nFactory,
 		IClientService $clientService,
 	) {
@@ -41,7 +41,7 @@ class PeertubeAPIService {
 	 * @return array
 	 */
 	public function getPeertubeInstances(): array {
-		$instances = trim($this->config->getAppValue(Application::APP_ID, 'instances'));
+		$instances = trim($this->appConfig->getAppValueString('instances', '', lazy: true));
 		$instances = preg_replace('/\s+/', ',', $instances);
 		$instances = preg_replace('/\n/', ',', $instances);
 		return explode(',', $instances);

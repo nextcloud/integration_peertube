@@ -9,15 +9,15 @@ namespace OCA\Peertube\Settings;
 
 use OCA\Peertube\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\AppFramework\Services\IInitialState;
-use OCP\IConfig;
 
 use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
 
 	public function __construct(
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private IInitialState $initialStateService,
 		?string $userId,
 	) {
@@ -27,7 +27,7 @@ class Admin implements ISettings {
 	 * @return TemplateResponse
 	 */
 	public function getForm(): TemplateResponse {
-		$instances = $this->config->getAppValue(Application::APP_ID, 'instances');
+		$instances = $this->appConfig->getAppValueString('instances', '', lazy: true);
 
 		$state = [
 			'instances' => $instances,
