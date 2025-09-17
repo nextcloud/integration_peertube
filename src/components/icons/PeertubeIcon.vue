@@ -4,7 +4,8 @@
 -->
 
 <template>
-	<span :aria-hidden="!title"
+	<span
+		:aria-hidden="!title"
 		:aria-label="title"
 		class="material-design-icon peertube-icon"
 		role="img"
@@ -32,14 +33,18 @@ export default {
 			type: String,
 			default: '',
 		},
+
 		fillColor: {
 			type: String,
 			default: 'currentColor',
 		},
+
 		size: {
 			type: Number,
 			default: 24,
 		},
 	},
+
+	emits: ['click'],
 }
 </script>

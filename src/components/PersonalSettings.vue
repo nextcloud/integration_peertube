@@ -4,7 +4,7 @@
 -->
 
 <template>
-	<div id="peertube_prefs" class="section">
+	<div id="peertube_prefs" class="settings-section">
 		<h2>
 			<PeertubeIcon class="icon" />
 			{{ t('integration_peertube', 'PeerTube integration') }}
@@ -12,18 +12,18 @@
 		<div id="peertube-content">
 			<div id="peertube-search-block">
 				<NcCheckboxRadioSwitch
-					:checked="state.search_enabled"
-					@update:checked="onCheckboxChanged($event, 'search_enabled')">
+					:model-value="state.search_enabled"
+					@update:model-value="onCheckboxChanged($event, 'search_enabled')">
 					{{ t('integration_peertube', 'Enable searching for PeerTube videos') }}
 				</NcCheckboxRadioSwitch>
-				<br>
-				<p v-if="state.search_enabled" class="settings-hint">
-					<InformationOutlineIcon :size="20" class="icon" />
-					{{ t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some PeerTube instances.') }}
-				</p>
+				<NcNoteCard
+					v-if="state.search_enabled"
+					type="warning"
+					class="settings-hint"
+					:text="t('integration_peertube', 'Warning, everything you type in the search bar will be sent to some PeerTube instances.')" />
 				<NcCheckboxRadioSwitch
-					:checked="state.link_preview_enabled"
-					@update:checked="onCheckboxChanged($event, 'link_preview_enabled')">
+					:model-value="state.link_preview_enabled"
+					@update:model-value="onCheckboxChanged($event, 'link_preview_enabled')">
 					{{ t('integration_peertube', 'Enable PeerTube video link previews') }}
 				</NcCheckboxRadioSwitch>
 			</div>
@@ -32,16 +32,13 @@
 </template>
 
 <script>
-import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
-
-import PeertubeIcon from './icons/PeertubeIcon.vue'
-
+import axios from '@nextcloud/axios'
+import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import axios from '@nextcloud/axios'
-import { showSuccess, showError } from '@nextcloud/dialogs'
-
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
+import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
+import PeertubeIcon from './icons/PeertubeIcon.vue'
 import { delay } from '../utils.js'
 
 export default {
@@ -50,7 +47,7 @@ export default {
 	components: {
 		PeertubeIcon,
 		NcCheckboxRadioSwitch,
-		InformationOutlineIcon,
+		NcNoteCard,
 	},
 
 	props: [],
@@ -58,7 +55,6 @@ export default {
 	data() {
 		return {
 			state: loadState('integration_peertube', 'user-config'),
-			loading: false,
 		}
 	},
 
@@ -73,23 +69,24 @@ export default {
 
 	methods: {
 		onInput() {
-			this.loading = true
 			delay(() => {
 				this.saveOptions({
 					api_key: this.state.api_key,
 				})
 			}, 2000)()
 		},
+
 		onCheckboxChanged(newValue, key) {
 			this.state[key] = newValue
 			this.saveOptions({ [key]: this.state[key] ? '1' : '0' })
 		},
+
 		saveOptions(values) {
 			const req = {
 				values,
 			}
 			const url = generateUrl('/apps/integration_peertube/config')
-			axios.put(url, req).then((response) => {
+			axios.put(url, req).then(() => {
 				showSuccess(t('integration_peertube', 'PeerTube options saved'))
 			}).catch((error) => {
 				showError(t('integration_peertube', 'Failed to save PeerTube options')
@@ -103,32 +100,29 @@ export default {
 
 <style scoped lang="scss">
 #peertube_prefs {
+	margin-inline-start: 12px;
+
 	#peertube-content {
-		margin-left: 40px;
+		margin-inline-start: 32px;
+		max-width: 800px;
 	}
+
 	h2,
-	.line,
 	.settings-hint {
 		display: flex;
+		justify-content: start;
 		align-items: center;
 		.icon {
-			margin-right: 4px;
+			margin-inline-end: 4px;
 		}
+	}
+
+	.settings-hint {
+		margin-inline-start: 32px;
 	}
 
 	h2 .icon {
-		margin-right: 8px;
-	}
-
-	.line {
-		> label {
-			width: 300px;
-			display: flex;
-			align-items: center;
-		}
-		> input {
-			width: 300px;
-		}
+		margin-inline-end: 8px;
 	}
 }
 </style>

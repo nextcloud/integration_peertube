@@ -4,8 +4,7 @@
 -->
 
 <template>
-	<iframe
-		:title="richObject.name"
+	<iframe :title="richObject.name"
 		:src="richObject.embed_url"
 		:allowfullscreen="true"
 		sandbox="allow-same-origin allow-scripts allow-popups"
@@ -22,17 +21,9 @@ export default {
 	},
 
 	props: {
-		richObjectType: {
-			type: String,
-			default: '',
-		},
 		richObject: {
 			type: Object,
 			default: null,
-		},
-		accessible: {
-			type: Boolean,
-			default: true,
 		},
 	},
 

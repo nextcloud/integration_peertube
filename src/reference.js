@@ -3,23 +3,19 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { registerWidget } from '@nextcloud/vue/dist/Components/NcRichText.js'
-import { linkTo } from '@nextcloud/router'
 import { getCSPNonce } from '@nextcloud/auth'
+import { linkTo } from '@nextcloud/router'
+import { registerWidget } from '@nextcloud/vue/components/NcRichText'
 
-__webpack_nonce__ = getCSPNonce() // eslint-disable-line
+__webpack_nonce__ = getCSPNonce()
 __webpack_public_path__ = linkTo('integration_peertube', 'js/') // eslint-disable-line
 
-registerWidget('integration_peertube_video', async (el, { richObjectType, richObject, accessible }) => {
-	const { default: Vue } = await import(/* webpackChunkName: "vue-lazy" */'vue')
-	Vue.mixin({ methods: { t, n } })
+registerWidget('integration_peertube_video', async (el, { richObject }) => {
+	const { createApp } = await import(/* webpackChunkName: "vue-lazy" */'vue')
 	const { default: VideoReferenceWidget } = await import(/* webpackChunkName: "reference-video-lazy" */'./components/VideoReferenceWidget.vue')
-	const Widget = Vue.extend(VideoReferenceWidget)
-	new Widget({
-		propsData: {
-			richObjectType,
-			richObject,
-			accessible,
-		},
-	}).$mount(el)
+	const app = createApp(VideoReferenceWidget, {
+		richObject,
+	})
+	app.mixin({ methods: { t, n } })
+	app.mount(el)
 })
