@@ -4,7 +4,13 @@
 -->
 
 <template>
-	<iframe :title="richObject.name"
+	<NcReferenceWidget
+		v-if="!interactive && reference"
+		class="non-interactive-widget"
+		:reference="reference" />
+	<iframe
+		v-if="interactive"
+		:title="richObject.name"
 		:src="richObject.embed_url"
 		:allowfullscreen="true"
 		sandbox="allow-same-origin allow-scripts allow-popups"
@@ -13,33 +19,47 @@
 		frameborder="0" />
 </template>
 
-<script>
-export default {
+<script setup>
+import { computed } from 'vue'
+import { NcReferenceWidget } from '@nextcloud/vue/components/NcRichText'
+
+defineOptions({
 	name: 'VideoReferenceWidget',
 
 	components: {
+		NcReferenceWidget,
+	},
+})
+
+const props = defineProps({
+	richObject: {
+		type: Object,
+		default: null,
 	},
 
-	props: {
-		richObject: {
-			type: Object,
-			default: null,
-		},
+	interactive: {
+		type: Boolean,
+		default: false,
 	},
 
-	data() {
-		return {
-		}
+	accessible: {
+		type: Boolean,
+		default: false,
 	},
+})
 
-	computed: {
-	},
-
-	methods: {
-	},
-}
+const reference = computed(() => ({
+	richObjectType: 'open-graph',
+	richObject: props.richObject,
+	accessible: props.accessible,
+	openGraphObject: { ...props.richObject },
+}))
 </script>
 
 <style scoped lang="scss">
-// nothing yet
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+:global(.non-interactive-widget a) {
+	border: unset !important;
+	margin: unset !important;
+}
 </style>
