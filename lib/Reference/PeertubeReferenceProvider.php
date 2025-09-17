@@ -18,7 +18,6 @@ use OCP\Collaboration\Reference\ISearchableReferenceProvider;
 use OCP\Collaboration\Reference\LinkReferenceProvider;
 use OCP\Collaboration\Reference\Reference;
 use OCP\IL10N;
-
 use OCP\IURLGenerator;
 use Throwable;
 
@@ -106,25 +105,36 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 					return $this->linkReferenceProvider->resolveReference($referenceText);
 				}
 
-				$videoInfo = $this->peertubeAPIService->getVideoInfo($instanceUrl, $videoId);
-				if (!empty($videoInfo['error'])) {
+				$videoInfo = [];
+				$videoInfoRaw = $this->peertubeAPIService->getVideoInfo($instanceUrl, $videoId);
+				if (!empty($videoInfoRaw['error'])) {
 					return $this->linkReferenceProvider->resolveReference($referenceText);
 				}
-				$videoInfo['embed_url'] = $instanceUrl . $videoInfo['embedPath'];
 				$reference = new Reference($referenceText);
-				$reference->setTitle($videoInfo['name'] ?? '???');
+				$reference->setTitle($videoInfoRaw['name'] ?? '???');
+				$reference->setDescription($videoInfoRaw['truncatedDescription'] ?? '');
 				$thumbnailUrl = $this->urlGenerator->linkToRouteAbsolute(
 					Application::APP_ID . '.peertubeAPI.getThumbnail',
 					[
-						'thumbnailPath' => $videoInfo['thumbnailPath'] ?? '',
+						'thumbnailPath' => $videoInfoRaw['thumbnailPath'] ?? '',
 						'searchInstanceUrl' => $instanceUrl,
-						'fallbackName' => $videoInfo['name'] ?? '???',
+						'fallbackName' => $videoInfoRaw['name'] ?? '???',
 					]
 				);
+
+				// add things here for opengraph, id, name, description, thumb, link
+				$videoInfo['id'] = $referenceText . $videoInfoRaw['uuid'];
+				$videoInfo['name'] = $videoInfoRaw['name'];
+				$videoInfo['description'] = $videoInfoRaw['truncatedDescription'] ?? '';
+				$videoInfo['thumb'] = $thumbnailUrl;
+				$videoInfo['link'] = $referenceText;
+				$videoInfo['embed_url'] = $instanceUrl . $videoInfoRaw['embedPath'];
+
 				$reference->setImageUrl($thumbnailUrl);
+				$reference->setUrl($referenceText);
 				$reference->setRichObject(
 					self::RICH_OBJECT_TYPE_VIDEO,
-					$videoInfo
+					$videoInfo,
 				);
 				return $reference;
 			} catch (Exception|Throwable $e) {
