@@ -7,10 +7,9 @@
 
 namespace OCA\Peertube\Controller;
 
-use OCA\Peertube\AppInfo\Application;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataResponse;
-use OCP\IConfig;
+use OCP\AppFramework\Services\IAppConfig;
 
 use OCP\IRequest;
 use OCP\PreConditionNotMetException;
@@ -20,7 +19,7 @@ class ConfigController extends Controller {
 	public function __construct(
 		string $appName,
 		IRequest $request,
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private ?string $userId,
 	) {
 		parent::__construct($appName, $request);
@@ -34,8 +33,12 @@ class ConfigController extends Controller {
 	 * @throws PreConditionNotMetException
 	 */
 	public function setConfig(array $values): DataResponse {
-		foreach ($values as $key => $value) {
-			$this->config->setUserValue($this->userId, Application::APP_ID, $key, $value);
+		try {
+			foreach ($values as $key => $value) {
+				$this->appConfig->setUserValue($this->userId, $key, $value);
+			}
+		} catch (\Exception $e) {
+			return new DataResponse(['error' => 'Failed to set config values'], 500);
 		}
 		return new DataResponse('');
 	}
@@ -45,8 +48,12 @@ class ConfigController extends Controller {
 	 * @return DataResponse
 	 */
 	public function setAdminConfig(array $values): DataResponse {
-		foreach ($values as $key => $value) {
-			$this->config->setAppValue(Application::APP_ID, $key, $value);
+		try {
+			foreach ($values as $key => $value) {
+				$this->appConfig->setAppValueString($key, $value, lazy:true);
+			}
+		} catch (\Exception $e) {
+			return new DataResponse(['error' => $e->getMessage()], 500);
 		}
 
 		return new DataResponse('');

@@ -9,15 +9,14 @@ namespace OCA\Peertube\Settings;
 
 use OCA\Peertube\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\AppFramework\Services\IInitialState;
-use OCP\IConfig;
-
 use OCP\Settings\ISettings;
 
 class Personal implements ISettings {
 
 	public function __construct(
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private IInitialState $initialStateService,
 		private ?string $userId,
 	) {
@@ -27,8 +26,8 @@ class Personal implements ISettings {
 	 * @return TemplateResponse
 	 */
 	public function getForm(): TemplateResponse {
-		$searchEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'search_enabled', '0') === '1';
-		$linkPreviewEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'link_preview_enabled', '1') === '1';
+		$searchEnabled = $this->appConfig->getUserValue($this->userId, 'search_enabled', '0') === '1';
+		$linkPreviewEnabled = $this->appConfig->getUserValue($this->userId, 'link_preview_enabled', '1') === '1';
 
 		$userConfig = [
 			'search_enabled' => $searchEnabled,

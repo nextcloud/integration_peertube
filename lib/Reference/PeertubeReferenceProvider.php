@@ -10,13 +10,13 @@ namespace OCA\Peertube\Reference;
 use Exception;
 use OCA\Peertube\AppInfo\Application;
 use OCA\Peertube\Service\PeertubeAPIService;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\Collaboration\Reference\ADiscoverableReferenceProvider;
 use OCP\Collaboration\Reference\IReference;
 use OCP\Collaboration\Reference\IReferenceManager;
 use OCP\Collaboration\Reference\ISearchableReferenceProvider;
 use OCP\Collaboration\Reference\LinkReferenceProvider;
 use OCP\Collaboration\Reference\Reference;
-use OCP\IConfig;
 use OCP\IL10N;
 
 use OCP\IURLGenerator;
@@ -28,7 +28,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 
 	public function __construct(
 		private PeertubeAPIService $peertubeAPIService,
-		private IConfig $config,
+		private IAppConfig $appConfig,
 		private IL10N $l10n,
 		private IURLGenerator $urlGenerator,
 		private IReferenceManager $referenceManager,
@@ -81,8 +81,8 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 	 * @inheritDoc
 	 */
 	public function matchReference(string $referenceText): bool {
-		$adminLinkPreviewEnabled = $this->config->getAppValue(Application::APP_ID, 'link_preview_enabled', '1') === '1';
-		$userLinkPreviewEnabled = $this->config->getUserValue($this->userId, Application::APP_ID, 'link_preview_enabled', '1') === '1';
+		$adminLinkPreviewEnabled = $this->appConfig->getAppValueString('link_preview_enabled', '1', lazy:true) === '1';
+		$userLinkPreviewEnabled = $this->appConfig->getUserValue($this->userId, 'link_preview_enabled', '1') === '1';
 		if (!$adminLinkPreviewEnabled || !$userLinkPreviewEnabled) {
 			return false;
 		}
@@ -165,12 +165,10 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 	}
 
 	/**
-	 * We use the userId here because when connecting/disconnecting from the GitHub account,
-	 * we want to invalidate all the user cache and this is only possible with the cache prefix
 	 * @inheritDoc
 	 */
 	public function getCachePrefix(string $referenceId): string {
-		return $this->userId ?? '';
+		return $referenceId;
 	}
 
 	/**
