@@ -9,7 +9,7 @@
 		class="non-interactive-widget"
 		:reference="reference" />
 	<iframe
-		v-if="interactive"
+		v-else-if="interactive"
 		:title="richObject.name"
 		:src="richObject.embed_url"
 		:allowfullscreen="true"
@@ -17,6 +17,9 @@
 		width="100%"
 		height="315"
 		frameborder="0" />
+	<div v-else>
+		{{ t('integration_peertube', 'No video reference found') }}
+	</div>
 </template>
 
 <script setup>
