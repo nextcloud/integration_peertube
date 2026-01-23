@@ -4,30 +4,27 @@
 -->
 
 <template>
-	<div id="peertube_prefs" class="settings-section">
+	<div id="peertube_prefs" class="section">
 		<h2>
 			<PeertubeIcon class="icon" />
 			{{ t('integration_peertube', 'PeerTube integration') }}
 		</h2>
 		<div id="peertube-content">
-			<div class="line">
+			<div>
 				<label for="peertube-instances">
 					<EarthIcon :size="20" class="icon" />
 					{{ t('integration_peertube', 'PeerTube instance list (separated by commas or new lines)') }}
 				</label>
 				<NcLoadingIcon v-if="loading" :size="20" class="icon" />
 			</div>
-			<div class="line">
-				<textarea
-					id="peertube-instances"
-					v-model="state.instances"
-					placeholder="…"
-					@input="onInput" />
-			</div>
-			<p class="settings-hint">
-				<InformationOutlineIcon :size="20" class="icon" />
+			<textarea
+				id="peertube-instances"
+				v-model="state.instances"
+				placeholder="…"
+				@input="onInput" />
+			<NcNoteCard type="info">
 				{{ t('integration_peertube', 'Nextcloud will search and resolve video links for all those instances.') }}
-			</p>
+			</NcNoteCard>
 		</div>
 	</div>
 </template>
@@ -38,8 +35,8 @@ import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
 import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
+import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import EarthIcon from 'vue-material-design-icons/Earth.vue'
-import InformationOutlineIcon from 'vue-material-design-icons/InformationOutline.vue'
 import PeertubeIcon from './icons/PeertubeIcon.vue'
 import { delay } from '../utils.js'
 
@@ -49,8 +46,8 @@ export default {
 	components: {
 		PeertubeIcon,
 		EarthIcon,
-		InformationOutlineIcon,
 		NcLoadingIcon,
+		NcNoteCard,
 	},
 
 	props: [],
@@ -102,47 +99,27 @@ export default {
 
 <style scoped lang="scss">
 #peertube_prefs {
-	margin-inline-start: 12px;
-
 	#peertube-content {
-		margin-inline-start: 32px;
+		margin-inline-start: 40px;
 		max-width: 800px;
 	}
 
-	h2,
-	.line,
-	.settings-hint {
+	h2 {
 		display: flex;
 		justify-content: start;
 		align-items: center;
-		.icon {
-			margin-inline-end: 4px;
-		}
+		gap: 8px;
 	}
 
-	.line,
-	.settings-hint {
-		margin-top: 12px;
-	}
-
-	h2 .icon {
-		margin-inline-end: 8px;
+	label {
+		display: flex;
+		align-items: center;
+		gap: 4px;
 	}
 
 	#peertube-instances {
-		width: 550px;
+		width: 100%;
 		height: 100px;
-	}
-
-	.line {
-		gap: 4px;
-		> label {
-			display: flex;
-			align-items: center;
-		}
-		> input {
-			width: 300px;
-		}
 	}
 }
 </style>

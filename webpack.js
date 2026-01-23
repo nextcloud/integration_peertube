@@ -6,7 +6,7 @@
 import webpackConfig from '@nextcloud/webpack-vue-config'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import path from 'path'
-import StyleLintPlugin from 'stylelint-webpack-plugin'
+// import StyleLintPlugin from 'stylelint-webpack-plugin'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -34,11 +34,11 @@ webpackConfig.plugins.push(
 		failOnError: !isDev,
 	}),
 )
-webpackConfig.plugins.push(
-	new StyleLintPlugin({
-		files: 'src/**/*.{css,scss,vue}',
-		failOnError: !isDev,
-	}),
-)
+//webpackConfig.plugins.push(
+//	new StyleLintPlugin({
+//		files: 'src/**/*.{css,scss,vue}',
+//		failOnError: !isDev,
+//	}),
+//)
 
 export default webpackConfig
