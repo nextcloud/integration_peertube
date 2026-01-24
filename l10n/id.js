@@ -1,8 +1,19 @@
 OC.L10N.register(
     "integration_peertube",
     {
-    "Bad HTTP method" : "Metode HTTP tidak benar",
-    "Bad credentials" : "Kredensial tidak benar",
-    "Connected accounts" : "Akun terhubung"
+    "PeerTube videos" : "Video PeerTube",
+    "Bad HTTP method" : "Metode HTTP tidak valid",
+    "Bad credentials" : "Kredensial tidak valid",
+    "Connected accounts" : "Akun yang terhubung",
+    "PeerTube integration" : "Integrasi PeerTube",
+    "Integration of PeerTube decentralized and federated video platform" : "Integrasi platform video PeerTube yang terdesentralisasi dan terfederasi",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Integrasi PeerTube menyediakan penyedia smart picker untuk mencari video\ndan widget pratinjau tautan untuk tautan video.",
+    "PeerTube options saved" : "Opsi PeerTube berhasil disimpan",
+    "Failed to save PeerTube options" : "Gagal menyimpan opsi PeerTube",
+    "PeerTube instance list (separated by commas or new lines)" : "Daftar instance PeerTube (dipisahkan dengan koma atau baris baru)",
+    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud akan mencari dan menyelesaikan tautan video untuk semua instance tersebut.",
+    "Enable searching for PeerTube videos" : "Aktifkan pencarian video PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Peringatan, semua yang Anda ketik di bilah pencarian akan dikirim ke beberapa instance PeerTube.",
+    "Enable PeerTube video link previews" : "Aktifkan pratinjau tautan video PeerTube"
 },
 "nplurals=1; plural=0;");
