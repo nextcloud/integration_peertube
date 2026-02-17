@@ -7,7 +7,7 @@ import { getCSPNonce } from '@nextcloud/auth'
 import { linkTo } from '@nextcloud/router'
 import { registerWidget } from '@nextcloud/vue/components/NcRichText'
 
-__webpack_nonce__ = getCSPNonce()
+__webpack_nonce__ = getCSPNonce() // eslint-disable-line
 __webpack_public_path__ = linkTo('integration_peertube', 'js/') // eslint-disable-line
 
 registerWidget('integration_peertube_video', async (el, { richObject, accessible, interactive }) => {
