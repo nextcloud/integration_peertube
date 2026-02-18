@@ -13,7 +13,7 @@ OC.L10N.register(
     "PeerTube instance list (separated by commas or new lines)" : "PeerTube instance list (separated by commas or new lines)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud will search and resolve video links for all those instances.",
     "Enable searching for PeerTube videos" : "Enable searching for PeerTube videos",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Warning, everything you type in the search bar will be sent to some PeerTube instances.",
-    "Enable PeerTube video link previews" : "Enable PeerTube video link previews"
+    "Enable PeerTube video link previews" : "Enable PeerTube video link previews",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Warning, everything you type in the search bar will be sent to some PeerTube instances."
 },
 "nplurals=2; plural=(n != 1);");

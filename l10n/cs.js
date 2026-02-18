@@ -13,7 +13,7 @@ OC.L10N.register(
     "PeerTube instance list (separated by commas or new lines)" : "Seznam instancí PeerTube (oddělovaných čárkami nebo konci řádků)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud bude hledat a řešit odkazy na videa pro všechny tyto instance.",
     "Enable searching for PeerTube videos" : "Zapnout vyhledávání videí na PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Varování – cokoli zadáte do kolonky vyhledávání bude odesláno na některou z instancí PeerTube.",
-    "Enable PeerTube video link previews" : "Zapnout náhledy odkazů na videa v PeerTube"
+    "Enable PeerTube video link previews" : "Zapnout náhledy odkazů na videa v PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Varování – cokoli zadáte do kolonky vyhledávání bude odesláno na některou z instancí PeerTube."
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

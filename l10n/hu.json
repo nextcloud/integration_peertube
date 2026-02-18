@@ -11,7 +11,7 @@
     "PeerTube instance list (separated by commas or new lines)" : "PeerTube példánylista (vesszőkkel vagy új sorokkal elválasztva)",
     "Nextcloud will search and resolve video links for all those instances." : "A Nextcloud megkeresi és feloldja ezen példányok videóhivatkozásait.",
     "Enable searching for PeerTube videos" : "A PeerTube videók keresésének engedélyezése",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Figyelem, minden amit a keresősávba ír, el lesz lesz küldve bizonyos PeerTube-példányoknak.",
-    "Enable PeerTube video link previews" : "PeerTube videóhivatkozás-előnézetek engedélyezése"
+    "Enable PeerTube video link previews" : "PeerTube videóhivatkozás-előnézetek engedélyezése",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Figyelem, minden amit a keresősávba ír, el lesz lesz küldve bizonyos PeerTube-példányoknak."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

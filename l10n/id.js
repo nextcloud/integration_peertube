@@ -13,7 +13,7 @@ OC.L10N.register(
     "PeerTube instance list (separated by commas or new lines)" : "Daftar instance PeerTube (dipisahkan dengan koma atau baris baru)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud akan mencari dan menyelesaikan tautan video untuk semua instance tersebut.",
     "Enable searching for PeerTube videos" : "Aktifkan pencarian video PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Peringatan, semua yang Anda ketik di bilah pencarian akan dikirim ke beberapa instance PeerTube.",
-    "Enable PeerTube video link previews" : "Aktifkan pratinjau tautan video PeerTube"
+    "Enable PeerTube video link previews" : "Aktifkan pratinjau tautan video PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Peringatan, semua yang Anda ketik di bilah pencarian akan dikirim ke beberapa instance PeerTube."
 },
 "nplurals=1; plural=0;");
