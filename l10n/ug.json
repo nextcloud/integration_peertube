@@ -11,7 +11,7 @@
     "PeerTube instance list (separated by commas or new lines)" : "PeerTube مىسال تىزىملىكى (پەش ياكى يېڭى قۇرلار بىلەن ئايرىلىدۇ)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud بۇ ئەھۋاللارنىڭ سىن ئۇلىنىشىنى ئىزدەيدۇ ۋە ھەل قىلىدۇ.",
     "Enable searching for PeerTube videos" : "PeerTube سىنلىرىنى ئىزدەشنى قوزغىتىڭ",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "ئاگاھلاندۇرۇش ، ئىزدەش ستونىغا يازغانلىرىڭىزنىڭ ھەممىسى PeerTube مىساللىرىغا ئەۋەتىلىدۇ.",
-    "Enable PeerTube video link previews" : "PeerTube سىن ئۇلانمىسىنى كۆرۈشنى قوزغىتىڭ"
+    "Enable PeerTube video link previews" : "PeerTube سىن ئۇلانمىسىنى كۆرۈشنى قوزغىتىڭ",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "ئاگاھلاندۇرۇش ، ئىزدەش ستونىغا يازغانلىرىڭىزنىڭ ھەممىسى PeerTube مىساللىرىغا ئەۋەتىلىدۇ."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

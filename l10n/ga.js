@@ -13,7 +13,7 @@ OC.L10N.register(
     "PeerTube instance list (separated by commas or new lines)" : "Liosta cásanna PeerTube (scartha le camóga nó línte nua)",
     "Nextcloud will search and resolve video links for all those instances." : "Déanfaidh Nextcloud naisc físeáin a chuardach agus a réiteach do na cásanna sin go léir.",
     "Enable searching for PeerTube videos" : "Cumasaigh cuardach le haghaidh físeáin PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Rabhadh, seolfar gach rud a chlóscríobhann tú sa bharra cuardaigh chuig roinnt cásanna PeerTube.",
-    "Enable PeerTube video link previews" : "Cumasaigh réamhamhairc naisc físe PeerTube"
+    "Enable PeerTube video link previews" : "Cumasaigh réamhamhairc naisc físe PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Rabhadh, seolfar gach rud a chlóscríobhann tú sa bharra cuardaigh chuig roinnt cásanna PeerTube."
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");

@@ -11,7 +11,7 @@
     "PeerTube instance list (separated by commas or new lines)" : "قائمة خوادم PeerTube (مفصول بينها بفاصلة أو سطر جديد)",
     "Nextcloud will search and resolve video links for all those instances." : "سوف تقوم نكست كلاود بالبحث و حل عناوين مقاطع الفيديو في كل تلك الخوادم.",
     "Enable searching for PeerTube videos" : "تمكين البحث عن مقاطع فيديو PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "تحذير. أي شيء تكتبه في شريط البحث سيتم إرساله إلى خوادم PeerTube.",
-    "Enable PeerTube video link previews" : "تمكين معاينات روابط مقاطع فيديو PeerTube"
+    "Enable PeerTube video link previews" : "تمكين معاينات روابط مقاطع فيديو PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "تحذير. أي شيء تكتبه في شريط البحث سيتم إرساله إلى خوادم PeerTube."
 },"pluralForm" :"nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;"
 }

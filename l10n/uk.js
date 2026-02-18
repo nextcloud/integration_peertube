@@ -13,7 +13,7 @@ OC.L10N.register(
     "PeerTube instance list (separated by commas or new lines)" : "Список екземплярів PeerTube (через кому або з нового рядка)",
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud буде шукати і вирішувати відеопосилання для всіх цих випадків.",
     "Enable searching for PeerTube videos" : "Увімкнути пошук відео на PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Увага, все, що ви введете в рядок пошуку, буде надіслано деяким екземплярам PeerTube.",
-    "Enable PeerTube video link previews" : "Ввімкнути попередній перегляд відеопосилань PeerTube"
+    "Enable PeerTube video link previews" : "Ввімкнути попередній перегляд відеопосилань PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Увага, все, що ви введете в рядок пошуку, буде надіслано деяким екземплярам PeerTube."
 },
 "nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);");
