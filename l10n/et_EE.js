@@ -1,8 +1,20 @@
 OC.L10N.register(
     "integration_peertube",
     {
+    "PeerTube videos" : "PeerTube'i videod",
     "Bad HTTP method" : "Vigane HTTP-meetod",
     "Bad credentials" : "Vale kasutajanimi, salasõna või tunnusluba",
-    "Connected accounts" : "Ühendatud kasutajakontod"
+    "Connected accounts" : "Ühendatud kasutajakontod",
+    "PeerTube integration" : "PeerTube'i lõiming",
+    "Integration of PeerTube decentralized and federated video platform" : "PeerTube'i hajutatud ja födereeritud videoplatvormi tugi",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "PeerTube'i lõiming lisab nutivalija videote otsimiseks\nja linkide eelvaadete kuvamiseks.",
+    "PeerTube options saved" : "PeerTube'i eelistused on salvestatud",
+    "Failed to save PeerTube options" : "PeerTube'i eelistuste on salvestamine ei õnnestunud",
+    "PeerTube instance list (separated by commas or new lines)" : "PeerTube'i serverite loend (komadega või reavahetustega eraldatud loend)",
+    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud otsib ja leiab nende videolinkide teavet kõikidest nendest serveritest.",
+    "Enable searching for PeerTube videos" : "Lülita PeerTube'i videote otsing sisse",
+    "Enable PeerTube video link previews" : "Lülita PeerTube'i linkide eelvaated sisse",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Hoiatus, kõik otsinguribale sisestatud andmed saadetakse mõnele PeerTube'i serverile.",
+    "No video reference found" : "Ühtegi video viidet ei leidu"
 },
 "nplurals=2; plural=(n != 1);");
