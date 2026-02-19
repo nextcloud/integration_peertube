@@ -14,6 +14,7 @@ OC.L10N.register(
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud buscará e resolverá ligazóns de vídeo para todas esas instancias.",
     "Enable searching for PeerTube videos" : "Activar a busca de vídeos de PeerTube",
     "Enable PeerTube video link previews" : "Activar as vistas previas das ligazóns de vídeo de PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Advertencia, todo o que escriba na barra de buscas enviarase a algunhas instancias de PeerTube."
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Advertencia, todo o que escriba na barra de buscas enviarase a algunhas instancias de PeerTube.",
+    "No video reference found" : "Non se atopou ningunha referencia de vídeo"
 },
 "nplurals=2; plural=(n != 1);");
