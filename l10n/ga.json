@@ -12,6 +12,7 @@
     "Nextcloud will search and resolve video links for all those instances." : "Déanfaidh Nextcloud naisc físeáin a chuardach agus a réiteach do na cásanna sin go léir.",
     "Enable searching for PeerTube videos" : "Cumasaigh cuardach le haghaidh físeáin PeerTube",
     "Enable PeerTube video link previews" : "Cumasaigh réamhamhairc naisc físe PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Rabhadh, seolfar gach rud a chlóscríobhann tú sa bharra cuardaigh chuig roinnt cásanna PeerTube."
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Rabhadh, seolfar gach rud a chlóscríobhann tú sa bharra cuardaigh chuig roinnt cásanna PeerTube.",
+    "No video reference found" : "Níor aimsíodh aon tagairt físe"
 },"pluralForm" :"nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);"
 }
