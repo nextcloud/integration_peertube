@@ -14,6 +14,7 @@ OC.L10N.register(
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud 將會搜尋並解析全部這些站台的影片連結。",
     "Enable searching for PeerTube videos" : "啟用 PeerTube 影片搜尋",
     "Enable PeerTube video link previews" : "啟用 PeerTube 影片連結預覽",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "警告，您在搜尋列中輸入的所有東西都會傳送到部份 PeerTube 站台。"
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "警告，您在搜尋列中輸入的所有東西都會傳送到部份 PeerTube 站台。",
+    "No video reference found" : "找不到影片參照"
 },
 "nplurals=1; plural=0;");
