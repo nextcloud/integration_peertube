@@ -14,6 +14,7 @@ OC.L10N.register(
     "Nextcloud will search and resolve video links for all those instances." : "A Nextcloud megkeresi és feloldja ezen példányok videóhivatkozásait.",
     "Enable searching for PeerTube videos" : "A PeerTube videók keresésének engedélyezése",
     "Enable PeerTube video link previews" : "PeerTube videóhivatkozás-előnézetek engedélyezése",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Figyelem, minden amit a keresősávba ír, el lesz lesz küldve bizonyos PeerTube-példányoknak."
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Figyelem, minden amit a keresősávba ír, el lesz lesz küldve bizonyos PeerTube-példányoknak.",
+    "No video reference found" : "Nem található videóhivatkozás"
 },
 "nplurals=2; plural=(n != 1);");
