@@ -19,6 +19,7 @@ use OCP\Collaboration\Reference\LinkReferenceProvider;
 use OCP\Collaboration\Reference\Reference;
 use OCP\IL10N;
 use OCP\IURLGenerator;
+use Psr\Log\LoggerInterface;
 use Throwable;
 
 class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implements ISearchableReferenceProvider {
@@ -32,6 +33,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 		private IURLGenerator $urlGenerator,
 		private IReferenceManager $referenceManager,
 		private LinkReferenceProvider $linkReferenceProvider,
+		private LoggerInterface $logger,
 		private ?string $userId,
 	) {
 	}
@@ -107,6 +109,7 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 
 				$videoInfo = [];
 				$videoInfoRaw = $this->peertubeAPIService->getVideoInfo($instanceUrl, $videoId);
+				$this->logger->debug('Peertube Video Info', ['info' => $videoInfoRaw ]);
 				if (!empty($videoInfoRaw['error'])) {
 					return $this->linkReferenceProvider->resolveReference($referenceText);
 				}
@@ -121,6 +124,14 @@ class PeertubeReferenceProvider extends ADiscoverableReferenceProvider implement
 						'fallbackName' => $videoInfoRaw['name'] ?? '???',
 					]
 				);
+
+				if (!($videoInfoRaw['uuid'] ?? null) || !($videoInfoRaw['name'] ?? null) || !($videoInfoRaw['embedPath'] ?? null)) {
+					$this->logger->warning(
+						'Failed to resolve peertube reference, all of the keys "uuid", "name", "embedPath" not present in the response',
+						['info' => $videoInfoRaw],
+					);
+					return $this->linkReferenceProvider->resolveReference($referenceText);
+				}
 
 				// add things here for opengraph, id, name, description, thumb, link
 				$videoInfo['id'] = $referenceText . $videoInfoRaw['uuid'];

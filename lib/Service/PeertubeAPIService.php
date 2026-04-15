@@ -43,7 +43,9 @@ class PeertubeAPIService {
 	public function getPeertubeInstances(): array {
 		$instances = trim($this->appConfig->getAppValueString('instances', '', lazy: true));
 		$instances = preg_replace('/\s+/', ',', $instances);
-		$instances = preg_replace('/\n/', ',', $instances);
+		$instances = preg_replace('/\n+/', ',', $instances);
+		$instances = preg_replace('/\/,/', ',', $instances);
+		$instances = rtrim($instances, '/');
 		return explode(',', $instances);
 	}
 
@@ -173,9 +175,12 @@ class PeertubeAPIService {
 			}
 			$body = $response->getBody();
 			$respCode = $response->getStatusCode();
+			$this->logger->debug('raw peertube response', ['response_body' => (string)$body]);
 
 			if ($respCode >= 400) {
-				return ['error' => $this->l10n->t('Bad credentials')];
+				$parsedResponseBody = json_decode($body, true);
+				$this->logger->warning('Peertube API error', ['response_body' => $body]);
+				return ['error' => ($parsedResponseBody ? $parsedResponseBody : (string)$body)];
 			} else {
 				if ($rawResponse) {
 					return [
@@ -190,13 +195,13 @@ class PeertubeAPIService {
 			$responseBody = $e->getResponse()->getBody();
 			$parsedResponseBody = json_decode($responseBody, true);
 			if ($e->getResponse()->getStatusCode() === 404) {
-				$this->logger->debug('Peertube API error : ' . $e->getMessage(), ['response_body' => $parsedResponseBody, 'app' => Application::APP_ID]);
+				$this->logger->debug('Peertube API error : ' . $e->getMessage(), ['response_body' => $parsedResponseBody]);
 			} else {
-				$this->logger->warning('Peertube API error : ' . $e->getMessage(), ['response_body' => $parsedResponseBody, 'app' => Application::APP_ID]);
+				$this->logger->warning('Peertube API error : ' . $e->getMessage(), ['response_body' => $parsedResponseBody]);
 			}
 			return [
 				'error' => $e->getMessage(),
-				'body' => $parsedResponseBody,
+				'body' => ($parsedResponseBody ? $parsedResponseBody : (string)$responseBody),
 			];
 		} catch (Exception|Throwable $e) {
 			$this->logger->warning('Peertube API error : ' . $e->getMessage(), ['app' => Application::APP_ID]);
