@@ -10,7 +10,7 @@
 			{{ t('integration_peertube', 'PeerTube integration') }}
 		</h2>
 		<div id="peertube-content">
-			<div>
+			<div id="peertube-info">
 				<label for="peertube-instances">
 					<EarthIcon :size="20" class="icon" />
 					{{ t('integration_peertube', 'PeerTube instance list (separated by commas or new lines)') }}
@@ -37,8 +37,8 @@ import { generateUrl } from '@nextcloud/router'
 import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import EarthIcon from 'vue-material-design-icons/Earth.vue'
-import PeertubeIcon from './icons/PeertubeIcon.vue'
 import { delay } from '../utils.js'
+import PeertubeIcon from './icons/PeertubeIcon.vue'
 
 export default {
 	name: 'AdminSettings',
@@ -102,6 +102,11 @@ export default {
 	#peertube-content {
 		margin-inline-start: 40px;
 		max-width: 800px;
+
+		#peertube-info {
+			display: flex;
+			flex-direction: row;
+		}
 	}
 
 	h2 {
