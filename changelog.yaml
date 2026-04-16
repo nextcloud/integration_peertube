@@ -17,8 +17,21 @@ release_agent:
   - author: "^Nextcloud-bot$"
   - email: bot@nextcloud.com
   - author: "^dependabot\\[bot\\]$"
-  - message: "^chore(changelog):"
+  - message: "^chore\\(changelog\\):"
 entries:
+- version: 2.1.1
+  release_date: '2026-04-16'
+  sections:
+  - name: Changed
+    items:
+    - text: Modernize settings
+      authors:
+      - julien-nc
+      issue_number: 37
+    - text: maintenance updates
+      authors:
+      - kyteinsky
+      issue_number: 38
 - version: 2.1.0
   release_date: '2025-10-06'
   sections:
