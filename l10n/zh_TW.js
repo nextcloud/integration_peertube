@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "PeerTube videos" : "PeerTube 影片",
     "Bad HTTP method" : "錯誤的 HTTP 方法",
-    "Bad credentials" : "錯誤的憑證",
     "Connected accounts" : "已連結的帳號",
     "PeerTube integration" : "PeerTube 整合",
     "Integration of PeerTube decentralized and federated video platform" : "PeerTube 去中心化與聯邦式影片平台的整合",

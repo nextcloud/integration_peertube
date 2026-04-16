@@ -2,7 +2,6 @@ OC.L10N.register(
     "integration_peertube",
     {
     "Bad HTTP method" : "Неверный метод HTTP",
-    "Bad credentials" : "Неверные учетные данные",
     "Connected accounts" : "Подключённые учётные записи",
     "PeerTube integration" : "Интеграция PeerTube",
     "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Интеграция PeerTube предоставляет интеллектуальный инструмент выбора для поиска видео\nи виджет предварительного просмотра ссылок на видео.",

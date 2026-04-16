@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "PeerTube videos" : "PeerTube videos",
     "Bad HTTP method" : "ناچار HTTP ئۇسۇلى",
-    "Bad credentials" : "ناچار كىنىشكا",
     "Connected accounts" : "ئۇلانغان ھېساباتلار",
     "PeerTube integration" : "PeerTube بىرلەشتۈرۈش",
     "Integration of PeerTube decentralized and federated video platform" : "PeerTube نى تارقاقلاشتۇرۇش ۋە فېدېراتسىيە سىن سۇپىسىنى بىرلەشتۈرۈش",

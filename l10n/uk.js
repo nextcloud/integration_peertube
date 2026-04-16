@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "PeerTube videos" : "Відео на PeerTube",
     "Bad HTTP method" : "Поганий метод HTTP",
-    "Bad credentials" : "Погані облікові дані",
     "Connected accounts" : "Підключені облікові записи",
     "PeerTube integration" : "Інтеграція з PeerTube",
     "Integration of PeerTube decentralized and federated video platform" : "Інтеграція децентралізованої та федеративної відеоплатформи PeerTube",

@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "PeerTube videos" : "Físeáin PeerTube",
     "Bad HTTP method" : "Droch-mhodh HTTP",
-    "Bad credentials" : "Dintiúir dona",
     "Connected accounts" : "Cuntais nasctha",
     "PeerTube integration" : "Comhtháthú PeerTube",
     "Integration of PeerTube decentralized and federated video platform" : "Comhtháthú ardán físe díláraithe agus cónasctha PeerTube",

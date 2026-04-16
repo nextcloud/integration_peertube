@@ -1,7 +1,6 @@
 { "translations": {
     "PeerTube videos" : "تطبيق \"بيرتيوب\" PeerTube للفيديو",
     "Bad HTTP method" : "وظيفة HTTP  غير صحيحة",
-    "Bad credentials" : "حيثيات الدخول غير صحيحة",
     "Connected accounts" : "حسابات مترابطة",
     "PeerTube integration" : "مكاملة PeerTube",
     "Integration of PeerTube decentralized and federated video platform" : "المكاملة مع منصة الفيديو PeerTube عبر السحابة الموحدة واللامركزية",
