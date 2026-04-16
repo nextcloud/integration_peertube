@@ -1,0 +1,165 @@
+repository_link: https://github.com/nextcloud/integration_peertube
+title: Change Log
+description: All notable changes to this project will be documented in this file.
+markdown_preamble: |-
+  <!--
+    - SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
+    - SPDX-License-Identifier: CC0-1.0
+  -->
+  # Change Log
+  All notable changes to this project will be documented in this file.
+
+  The format is based on [Keep a Changelog](http://keepachangelog.com/)
+  and this project adheres to [Semantic Versioning](http://semver.org/).
+release_agent:
+  ignore_commits:
+  - author: "^pre-commit-ci\\[bot\\]$"
+  - author: "^Nextcloud-bot$"
+  - email: bot@nextcloud.com
+  - author: "^dependabot\\[bot\\]$"
+  - message: "^chore(changelog):"
+entries:
+- version: 2.1.0
+  release_date: '2025-10-06'
+  sections:
+  - name: Added
+    items:
+    - text: migrate to vue3
+      authors:
+      - kyteinsky
+      issue_number: 30
+    - text: lighter non-interactive reference widget by default
+      authors:
+      - kyteinsky
+      - julien-nc
+      issue_number: 33
+  - name: Changed
+    items:
+    - text: use lazy admin config values
+      authors:
+      - kyteinsky
+      issue_number: 31
+    - text: composer update and bump max NC version to 33
+      authors:
+      - kyteinsky
+      issue_number: 33
+- version: 2.0.0
+  release_date: '2025-09-01'
+  sections:
+  - name: Changed
+    items:
+    - text: Drop support for NC < 32
+      authors: []
+      issue_number:
+    - text: Add psalm-matrix check
+      authors: []
+      issue_number:
+- version: 1.3.0
+  release_date: '2025-08-29'
+  sections:
+  - name: Added
+    items:
+    - text: search providers marked as external sources
+      authors: []
+      issue_number:
+  - name: Changed
+    items:
+    - text: npm packages updated
+      authors: []
+      issue_number:
+    - text: max NC version bumped to 32
+      authors: []
+      issue_number:
+    - text: CSP Nonce updated
+      authors: []
+      issue_number:
+- version: 1.2.0
+  release_date: '2025-01-09'
+  sections:
+  - name: Added
+    items:
+    - text: Nextcloud 31 support
+      authors: []
+      issue_number:
+  - name: Changed
+    items:
+    - text: Updated npm packages
+      authors: []
+      issue_number:
+- version: 1.1.0
+  release_date: '2024-09-25'
+  sections:
+  - name: Changed
+    items:
+    - text: Updated npm packages
+      authors: []
+      issue_number:
+    - text: Drop support for NC 26, 27
+      authors: []
+      issue_number:
+  - name: Fixed
+    items:
+    - text: Corrected error handling and work with the empty PeerTube instance list
+      authors: []
+      issue_number:
+- version: 1.0.4
+  release_date: '2024-07-25'
+  sections:
+  - name: Added
+    items:
+    - text: Nextcloud 30 support
+      authors: []
+      issue_number:
+  - name: Changed
+    items:
+    - text: Updated npm packages (security)
+      authors: []
+      issue_number:
+    - text: Updated l10n (localization)
+      authors: []
+      issue_number:
+- version: 1.0.3
+  release_date: '2024-03-11'
+  sections:
+  - name: Changed
+    items:
+    - text: Updated npm packages
+      authors: []
+      issue_number:
+    - text: Updated l10n (localization)
+      authors: []
+      issue_number:
+- version: 1.0.2
+  release_date: '2023-11-02'
+  sections:
+  - name: Changed
+    items:
+    - text: Updated npm packages
+      authors: []
+      issue_number:
+    - text: Updated l10n (localization)
+      authors: []
+      issue_number:
+- version: 1.0.1
+  release_date: '2023-07-06'
+  sections:
+  - name: Changed
+    items:
+    - text: Disable unified search by default
+      authors:
+      - julien-nc
+      issue_number: 11
+  - name: Fixed
+    items:
+    - text: Fix toggling search provider, always allow it when used in the smart picker
+      authors:
+      - julien-nc
+      issue_number: 2
+- version: 1.0.0
+  release_date: '2023-03-06'
+  sections:
+  - name: Added
+    items:
+    - text: the app
+      authors: []
+      issue_number:

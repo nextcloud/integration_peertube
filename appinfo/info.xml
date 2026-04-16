@@ -14,15 +14,15 @@ and a link preview widget for video links.]]></description>
     <author>Julien Veyssier</author>
     <namespace>Peertube</namespace>
     <documentation>
-        <developer>https://github.com/julien-nc/integration_peertube</developer>
+        <developer>https://github.com/nextcloud/integration_peertube</developer>
     </documentation>
     <category>integration</category>
-    <website>https://github.com/julien-nc/integration_peertube</website>
-    <bugs>https://github.com/julien-nc/integration_peertube/issues</bugs>
-    <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot1.jpg</screenshot>
-    <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot2.jpg</screenshot>
-    <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot3.jpg</screenshot>
-    <screenshot>https://github.com/julien-nc/integration_peertube/raw/main/img/screenshot4.jpg</screenshot>
+    <website>https://github.com/nextcloud/integration_peertube</website>
+    <bugs>https://github.com/nextcloud/integration_peertube/issues</bugs>
+    <screenshot>https://github.com/nextcloud/integration_peertube/raw/main/img/screenshot1.jpg</screenshot>
+    <screenshot>https://github.com/nextcloud/integration_peertube/raw/main/img/screenshot2.jpg</screenshot>
+    <screenshot>https://github.com/nextcloud/integration_peertube/raw/main/img/screenshot3.jpg</screenshot>
+    <screenshot>https://github.com/nextcloud/integration_peertube/raw/main/img/screenshot4.jpg</screenshot>
     <dependencies>
         <nextcloud min-version="32" max-version="34"/>
     </dependencies>
