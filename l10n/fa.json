@@ -1,17 +1,17 @@
 { "translations": {
-    "PeerTube videos" : "ویدیوهای PeerTube",
-    "Bad HTTP method" : "روش HTTP بد",
+    "PeerTube videos" : "ویدیوهای پیرتیوب",
+    "Bad HTTP method" : "متد HTTP نامعتبر",
     "Connected accounts" : "حساب‌های متصل",
-    "PeerTube integration" : "یکپارچه‌سازی PeerTube",
-    "Integration of PeerTube decentralized and federated video platform" : "یکپارچه‌سازی با بستر ویدیویی غیرمتمرکز و فدرالِ PeerTube",
-    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "یکپارچه‌سازی PeerTube یک ارائه‌دهندهٔ انتخابگر هوشمند برای جستجوی ویدیوها\nو یک ابزارک پیش‌نمایش پیوند برای پیوندهای ویدیویی فراهم می‌کند.",
-    "PeerTube options saved" : "گزینه‌های PeerTube ذخیره شد",
-    "Failed to save PeerTube options" : "ذخیره گزینه‌های PeerTube ناموفق بود",
-    "PeerTube instance list (separated by commas or new lines)" : "فهرست نمونه‌های PeerTube (جدا شده با ویرگول یا خط جدید)",
-    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud پیوندهای ویدیویی را برای همهٔ آن نمونه‌ها جستجو و پردازش می‌کند.",
-    "Enable searching for PeerTube videos" : "فعال کردن جستجوی ویدیوهای PeerTube",
-    "Enable PeerTube video link previews" : "فعال کردن پیش‌نمایش پیوند ویدیوهای PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "هشدار: هر چیزی که در نوار جستجو تایپ کنید به برخی از نمونه‌های PeerTube ارسال می‌شود.",
-    "No video reference found" : "هیچ ارجاع ویدیویی پیدا نشد"
+    "PeerTube integration" : "یکپارچه‌سازی پیرتیوب",
+    "Integration of PeerTube decentralized and federated video platform" : "یکپارچه‌سازی پلتفرم ویدیویی غیرمتمرکز و فدرال پیرتیوب",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "یکپارچه‌سازی پیرتیوب یک ارائه‌دهنده انتخاب هوشمند برای جستجوی ویدیوها و یک ویجت پیش‌نمایش لینک برای لینک‌های ویدیو فراهم می‌کند.",
+    "PeerTube options saved" : "گزینه‌های پیرتیوب ذخیره شد",
+    "Failed to save PeerTube options" : "ذخیره گزینه‌های پیرتیوب ناموفق بود",
+    "PeerTube instance list (separated by commas or new lines)" : "لیست نمونه‌های پیرتیوب (جدا شده با کاما یا خط جدید)",
+    "Nextcloud will search and resolve video links for all those instances." : "نکست‌کلود لینک‌های ویدیو را برای تمام این نمونه‌ها جستجو و حل می‌کند.",
+    "Enable searching for PeerTube videos" : "فعال‌سازی جستجوی ویدیوهای پیرتیوب",
+    "Enable PeerTube video link previews" : "فعال‌سازی پیش‌نمایش لینک ویدیوی پیرتیوب",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "هشدار: هر چیزی که در نوار جستجو تایپ می‌کنید به برخی نمونه‌های پیرتیوب ارسال خواهد شد.",
+    "No video reference found" : "هیچ مرجع ویدیویی یافت نشد"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }
