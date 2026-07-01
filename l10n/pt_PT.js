@@ -6,7 +6,9 @@ OC.L10N.register(
     "Connected accounts" : "Contas conectadas",
     "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "A integração PeerTube fornece um provedor de seletor inteligente para pesquisar vídeos \ne um widget de visualização de links para links de vídeo.",
     "PeerTube options saved" : "Opções do PeerTube salvas",
+    "Failed to save PeerTube options" : "Falha ao salvar as opções do PeerTube",
     "Nextcloud will search and resolve video links for all those instances." : "O Nextcloud pesquisará e resolverá links de vídeo para todas essas instâncias.",
+    "Enable PeerTube video link previews" : "Ativar visualizações de links de vídeo PeerTube",
     "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Atenção, tudo que você digitar na barra de pesquisa será enviado para algumas instâncias do PeerTube.",
     "No video reference found" : "Nenhuma referência de vídeo encontrada"
 },
