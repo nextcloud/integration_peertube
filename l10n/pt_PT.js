@@ -4,6 +4,8 @@ OC.L10N.register(
     "PeerTube videos" : "Vídeos PeerTube",
     "Bad HTTP method" : "Método HTTP incorreto",
     "Connected accounts" : "Contas conectadas",
+    "PeerTube integration" : "Integração PeerTube",
+    "Integration of PeerTube decentralized and federated video platform" : "Integração da plataforma de vídeo descentralizada e federada PeerTube",
     "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "A integração PeerTube fornece um provedor de seletor inteligente para pesquisar vídeos \ne um widget de visualização de links para links de vídeo.",
     "PeerTube options saved" : "Opções do PeerTube salvas",
     "Failed to save PeerTube options" : "Falha ao salvar as opções do PeerTube",
