@@ -1,7 +1,19 @@
 OC.L10N.register(
     "integration_peertube",
     {
+    "PeerTube videos" : "„PeerTube“ vaizdo įrašai",
     "Bad HTTP method" : "Blogas HTTP metodas",
-    "Connected accounts" : "Prijungtos paskyros"
+    "Connected accounts" : "Prijungtos paskyros",
+    "PeerTube integration" : "„PeerTube“ integracija",
+    "Integration of PeerTube decentralized and federated video platform" : "Decentralizuotos ir federacinės vaizdo platformos „PeerTube“ integracija",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "„PeerTube“ integracija suteikia išmanųjį vaizdo įrašų paieškos įrankį\nbei nuorodų peržiūros valdiklį vaizdo įrašų nuorodoms.",
+    "PeerTube options saved" : "„PeerTube“ parinktys išsaugotos",
+    "Failed to save PeerTube options" : "Nepavyko išsaugoti „PeerTube“ nustatymų",
+    "PeerTube instance list (separated by commas or new lines)" : "„PeerTube“ egzempliorių sąrašas (atskirtas kableliais arba naujomis eilutėmis)",
+    "Nextcloud will search and resolve video links for all those instances." : "„Nextcloud“ ieškos ir iššifruos vaizdo įrašų nuorodas visais šiais atvejais.",
+    "Enable searching for PeerTube videos" : "Įjungti „PeerTube“ vaizdo įrašų paiešką",
+    "Enable PeerTube video link previews" : "Įjungti „PeerTube“ nuorodų peržiūras",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Įspėjimas: viskas, ką įvesite paieškos laukelyje, bus išsiųsta į kai kuriuos „PeerTube“ egzempliorius.",
+    "No video reference found" : "Vaizdo įrašo nuorodos nerasta"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");
