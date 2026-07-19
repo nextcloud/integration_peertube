@@ -13,6 +13,7 @@ OC.L10N.register(
     "Nextcloud will search and resolve video links for all those instances." : "Το Nextcloud θα αναζητά και θα επιλύει συνδέσμους βίντεο για όλα αυτά τα στιγμιότυπα.",
     "Enable searching for PeerTube videos" : "Ενεργοποίηση αναζήτησης για βίντεο PeerTube",
     "Enable PeerTube video link previews" : "Ενεργοποίηση προεπισκοπήσεων συνδέσμων βίντεο PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Προειδοποίηση, ό,τι πληκτρολογείτε στη γραμμή αναζήτησης θα αποστέλλεται σε ορισμένα στιγμιότυπα PeerTube."
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Προειδοποίηση, ό,τι πληκτρολογείτε στη γραμμή αναζήτησης θα αποστέλλεται σε ορισμένα στιγμιότυπα PeerTube.",
+    "No video reference found" : "Δεν βρέθηκε αναφορά βίντεο"
 },
 "nplurals=2; plural=(n != 1);");
