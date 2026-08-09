@@ -11,6 +11,7 @@
     "Nextcloud will search and resolve video links for all those instances." : "Nextcloud recherche et résout les liens vidéo pour toutes ces instances.",
     "Enable searching for PeerTube videos" : "Activer la recherche de vidéos PeerTube",
     "Enable PeerTube video link previews" : "Activer les liens de prévisualisation des vidéos PeerTube",
-    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Attention, tout ce que vous inscrivez dans la barre de recherche sera envoyé à certaines instances PeerTube."
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Attention, tout ce que vous inscrivez dans la barre de recherche sera envoyé à certaines instances PeerTube.",
+    "No video reference found" : "Aucune référence de vidéo trouvée"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
