@@ -11,7 +11,6 @@ use OCA\Peertube\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Services\IAppConfig;
 use OCP\AppFramework\Services\IInitialState;
-
 use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
