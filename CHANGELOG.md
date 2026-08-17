@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.2 - 2026-08-18
+
+### Changed
+- add NC 35 support ([#42](https://github.com/nextcloud/integration_peertube/pull/42)) @kyteinsky
+- remove non-existent branches from the matrix ([#44](https://github.com/nextcloud/integration_peertube/pull/44)) @kyteinsky
+- import from @nextcloud/vue/functions/registerReference ([#41](https://github.com/nextcloud/integration_peertube/pull/41)) @max-nextcloud
+- consider package-lock.json and composer.lock as binary in git ([#47](https://github.com/nextcloud/integration_peertube/pull/47)) @kyteinsky
+- composer and npm updates ([#46](https://github.com/nextcloud/integration_peertube/pull/46)) @kyteinsky
+
+### Fixed
+- [main] Fix npm audit ([#40](https://github.com/nextcloud/integration_peertube/pull/40)) @nextcloud-command
+
+
 ## 2.1.1 - 2026-04-16
 
 ### Changed

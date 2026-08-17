@@ -19,6 +19,37 @@ release_agent:
   - author: "^dependabot\\[bot\\]$"
   - message: "^chore\\(changelog\\):"
 entries:
+- version: 2.1.2
+  release_date: '2026-08-18'
+  sections:
+  - name: Changed
+    items:
+    - text: add NC 35 support
+      authors:
+      - kyteinsky
+      issue_number: 42
+    - text: remove non-existent branches from the matrix
+      authors:
+      - kyteinsky
+      issue_number: 44
+    - text: import from @nextcloud/vue/functions/registerReference
+      authors:
+      - max-nextcloud
+      issue_number: 41
+    - text: consider package-lock.json and composer.lock as binary in git
+      authors:
+      - kyteinsky
+      issue_number: 47
+    - text: composer and npm updates
+      authors:
+      - kyteinsky
+      issue_number: 46
+  - name: Fixed
+    items:
+    - text: "[main] Fix npm audit"
+      authors:
+      - nextcloud-command
+      issue_number: 40
 - version: 2.1.1
   release_date: '2026-04-16'
   sections:
