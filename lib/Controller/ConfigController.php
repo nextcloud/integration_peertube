@@ -10,7 +10,6 @@ namespace OCA\Peertube\Controller;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Services\IAppConfig;
-
 use OCP\IRequest;
 use OCP\PreConditionNotMetException;
 

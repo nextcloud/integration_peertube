@@ -12,7 +12,6 @@ use OCA\Peertube\Listener\PeertubeReferenceListener;
 use OCA\Peertube\Reference\PeertubeReferenceProvider;
 use OCA\Peertube\Search\VideoSearchProvider;
 use OCP\AppFramework\App;
-
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
