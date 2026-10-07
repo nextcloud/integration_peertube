@@ -1,5 +1,17 @@
 { "translations": {
+    "PeerTube videos" : "Videoer på PeerTube",
     "Bad HTTP method" : "Dårlig HTTP metode",
-    "Connected accounts" : "Forbundne konti"
+    "Connected accounts" : "Forbundne konti",
+    "PeerTube integration" : "PeerTube-integration",
+    "Integration of PeerTube decentralized and federated video platform" : "Integration med PeerTube, den decentrale og fødererede videoplatform",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "PeerTube-integrationen giver en udbyder til Smart Picker, der kan søge efter videoer,\nog en widget til forhåndsvisning af links til videoer.",
+    "PeerTube options saved" : "Indstillingerne for PeerTube er gemt",
+    "Failed to save PeerTube options" : "Indstillingerne for PeerTube kunne ikke gemmes",
+    "PeerTube instance list (separated by commas or new lines)" : "Liste over PeerTube-instanser (adskilt af kommaer eller linjeskift)",
+    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud søger efter og viser videolinks for alle disse instanser.",
+    "Enable searching for PeerTube videos" : "Aktivér søgning efter videoer på PeerTube",
+    "Enable PeerTube video link previews" : "Aktivér forhåndsvisning af links til videoer på PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Advarsel: Alt, hvad du skriver i søgefeltet, sendes til nogle PeerTube-instanser.",
+    "No video reference found" : "Der blev ikke fundet nogen videoreference"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
