@@ -41,7 +41,8 @@ class PeertubeAPIService {
 	 * @return array
 	 */
 	public function getPeertubeInstances(): array {
-		$instances = trim($this->appConfig->getAppValueString('instances', '', lazy: true));
+		// not lazy: ContentSecurityPolicyListener reads this on every page
+		$instances = trim($this->appConfig->getAppValueString('instances', '', lazy: false));
 		$instances = preg_replace('/\s+/', ',', $instances);
 		$instances = preg_replace('/\n+/', ',', $instances);
 		$instances = preg_replace('/\/,/', ',', $instances);
