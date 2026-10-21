@@ -15,5 +15,5 @@
 
 ## Reporting a Vulnerability
 
-Please report security vulnerabilities by email to one of the maintainers, with Subject containing `integration_tmdb` substring.
+Please report security vulnerabilities by email to one of the maintainers, with Subject containing `integration_peertube` substring.
 If there was no reply in 24 hours, then create an Issue, without technical details, to inform about previously sent mail.
