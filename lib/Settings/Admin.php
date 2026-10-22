@@ -26,7 +26,7 @@ class Admin implements ISettings {
 	 * @return TemplateResponse
 	 */
 	public function getForm(): TemplateResponse {
-		$instances = $this->appConfig->getAppValueString('instances', '', lazy: true);
+		$instances = $this->appConfig->getAppValueString('instances', '', lazy: false);
 
 		$state = [
 			'instances' => $instances,
