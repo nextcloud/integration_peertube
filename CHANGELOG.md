@@ -8,6 +8,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Removed
+- Nextcloud 32 and PHP 8.1 support ([#54](https://github.com/nextcloud/integration_peertube/pull/54)) @oleksandr-nc
+
 ## 2.1.2 - 2026-08-18
 
 ### Changed
