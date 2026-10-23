@@ -11,110 +11,141 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Removed
-- Nextcloud 32 and PHP 8.1 support ([#54](https://github.com/nextcloud/integration_peertube/pull/54)) @oleksandr-nc
+
+- Nextcloud 32 and PHP 8.1 support
 
 ## 2.1.2 - 2026-08-18
 
+### Added
+
+- Added support for Nextcloud 35
+
 ### Changed
-- add NC 35 support ([#42](https://github.com/nextcloud/integration_peertube/pull/42)) @kyteinsky
-- remove non-existent branches from the matrix ([#44](https://github.com/nextcloud/integration_peertube/pull/44)) @kyteinsky
-- import from @nextcloud/vue/functions/registerReference ([#41](https://github.com/nextcloud/integration_peertube/pull/41)) @max-nextcloud
-- consider package-lock.json and composer.lock as binary in git ([#47](https://github.com/nextcloud/integration_peertube/pull/47)) @kyteinsky
-- composer and npm updates ([#46](https://github.com/nextcloud/integration_peertube/pull/46)) @kyteinsky
 
-### Fixed
-- [main] Fix npm audit ([#40](https://github.com/nextcloud/integration_peertube/pull/40)) @nextcloud-command
-
+- Remove non-existent branches from the npm audit workflow
+- Import from @nextcloud/vue/functions/registerReference
+- Consider package-lock.json and composer.lock as binary in Git
+- Update dependencies
 
 ## 2.1.1 - 2026-04-16
 
-### Changed
-- Modernize settings ([#37](https://github.com/nextcloud/integration_peertube/pull/37)) @julien-nc
-- maintenance updates ([#38](https://github.com/nextcloud/integration_peertube/pull/38)) @kyteinsky
+### Added
 
+- Added support for Nextcloud 34
+
+### Changed
+
+- Modernize the settings
+- Update the workflows and add the npm audit fix workflow
+- Update dependencies
+
+### Fixed
+
+- Remove trailing slashes from the PeerTube instance URLs
+- Display the loading spinner next to the instance list label in the admin settings
+- Fall back to the plain link preview when PeerTube answers a video without its ID, name or embed path
 
 ## 2.1.0 - 2025-10-06
 
 ### Added
-- migrate to vue3 ([#30](https://github.com/nextcloud/integration_peertube/pull/30)) @kyteinsky
-- lighter non-interactive reference widget by default ([#33](https://github.com/nextcloud/integration_peertube/pull/33)) @kyteinsky @julien-nc
+
+- Added support for Nextcloud 33
+- Migrate to Vue 3
+- Lighter non-interactive reference widget by default
 
 ### Changed
-- use lazy admin config values ([#31](https://github.com/nextcloud/integration_peertube/pull/31)) @kyteinsky
-- composer update and bump max NC version to 33 ([#33](https://github.com/nextcloud/integration_peertube/pull/33)) @kyteinsky
 
+- Use lazy admin config values
+- Update dependencies
 
 ## 2.0.0 - 2025-09-01
 
 ### Changed
-- Drop support for NC < 32
-- Add psalm-matrix check
 
+- Add the psalm-matrix check
+
+### Removed
+
+- Nextcloud 28 to 31 support
 
 ## 1.3.0 - 2025-08-29
 
 ### Added
-- search providers marked as external sources
+
+- Added support for Nextcloud 32
+- Mark the search providers as external sources
 
 ### Changed
-- npm packages updated
-- max NC version bumped to 32
-- CSP Nonce updated
 
+- Update the CSP nonce
+- Update dependencies
 
 ## 1.2.0 - 2025-01-09
 
 ### Added
-- Nextcloud 31 support
+
+- Added support for Nextcloud 31
 
 ### Changed
-- Updated npm packages
 
+- Update dependencies
 
 ## 1.1.0 - 2024-09-25
 
 ### Changed
-- Updated npm packages
-- Drop support for NC 26, 27
+
+- Update dependencies
+
+### Removed
+
+- Nextcloud 26 and 27 support
 
 ### Fixed
-- Corrected error handling and work with the empty PeerTube instance list
 
+- Correct the error handling and the work with the empty PeerTube instance list
 
 ## 1.0.4 - 2024-07-25
 
 ### Added
-- Nextcloud 30 support
+
+- Added support for Nextcloud 30
 
 ### Changed
-- Updated npm packages (security)
-- Updated l10n (localization)
 
+- Update dependencies & translations
 
 ## 1.0.3 - 2024-03-11
 
-### Changed
-- Updated npm packages
-- Updated l10n (localization)
+### Added
 
+- Added support for Nextcloud 29
+
+### Changed
+
+- Update dependencies & translations
 
 ## 1.0.2 - 2023-11-02
 
 ### Changed
-- Updated npm packages
-- Updated l10n (localization)
 
+- Update dependencies & translations
 
 ## 1.0.1 - 2023-07-06
 
+### Added
+
+- Added support for Nextcloud 28
+
 ### Changed
-- Disable unified search by default ([#11](https://github.com/nextcloud/integration_peertube/pull/11)) @julien-nc
+
+- Disable unified search by default
 
 ### Fixed
-- Fix toggling search provider, always allow it when used in the smart picker ([#2](https://github.com/nextcloud/integration_peertube/pull/2)) @julien-nc
 
+- Fix toggling the search provider, always allow it when used in the smart picker
 
 ## 1.0.0 - 2023-03-06
 
 ### Added
-- the app
+
+- Initial release for Nextcloud 26 and 27
