@@ -1,7 +1,19 @@
 OC.L10N.register(
     "integration_peertube",
     {
+    "PeerTube videos" : "Videoclipuri PeerTube",
     "Bad HTTP method" : "Metodă HTTP nepotrivită",
-    "Connected accounts" : "Conturile conectate"
+    "Connected accounts" : "Conturile conectate",
+    "PeerTube integration" : "Integrare PeerTube",
+    "Integration of PeerTube decentralized and federated video platform" : "Integrare cu platforma video descentralizată și federată PeerTube",
+    "PeerTube integration provides a smart picker provider to search for videos\nand a link preview widget for video links." : "Integrarea PeerTube oferă un furnizor Smart Picker pentru căutarea videoclipurilor și un widget de previzualizare pentru linkurile către videoclipuri.",
+    "PeerTube options saved" : "Opțiunile PeerTube au fost salvate",
+    "Failed to save PeerTube options" : "Salvarea opțiunilor PeerTube a eșuat",
+    "PeerTube instance list (separated by commas or new lines)" : "Lista instanțelor PeerTube (separate prin virgule sau rânduri noi)",
+    "Nextcloud will search and resolve video links for all those instances." : "Nextcloud va căuta și va rezolva linkurile video pentru toate aceste instanțe.",
+    "Enable searching for PeerTube videos" : "Activează căutarea de videoclipuri PeerTube",
+    "Enable PeerTube video link previews" : "Activează previzualizările linkurilor către videoclipuri PeerTube",
+    "Warning, everything you type in the search bar will be sent to some PeerTube instances." : "Atenție, tot ce tastezi în bara de căutare va fi trimis către anumite instanțe PeerTube.",
+    "No video reference found" : "Nu a fost găsită nicio referință video"
 },
 "nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));");
