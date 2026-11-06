@@ -8,10 +8,10 @@ let mytimer = 0
 /**
  * Creates a delayed version of the provided callback function.
  *
- * @param {Function} callback - The function to be executed after the specified delay.
+ * @param {(...args: unknown[]) => void} callback - The function to be executed after the specified delay.
  * @param {number} ms - The number of milliseconds to wait before executing the callback function. Defaults to 0 if not provided.
  *
- * @return {Function} A new function that, when called, will execute the original callback function after the specified delay.
+ * @return {(...args: unknown[]) => void} A new function that, when called, will execute the original callback function after the specified delay.
  */
 export function delay(callback, ms) {
 	return function() {

@@ -37,8 +37,8 @@ import { generateUrl } from '@nextcloud/router'
 import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import EarthIcon from 'vue-material-design-icons/Earth.vue'
-import { delay } from '../utils.js'
 import PeertubeIcon from './icons/PeertubeIcon.vue'
+import { delay } from '../utils.js'
 
 export default {
 	name: 'AdminSettings',

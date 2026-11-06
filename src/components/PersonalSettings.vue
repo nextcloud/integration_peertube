@@ -13,13 +13,13 @@
 			<div id="peertube-search-block">
 				<NcFormBox>
 					<NcFormBoxSwitch
-						:model-value="state.search_enabled"
-						@update:model-value="onCheckboxChanged($event, 'search_enabled')">
+						:modelValue="state.search_enabled"
+						@update:modelValue="onCheckboxChanged($event, 'search_enabled')">
 						{{ t('integration_peertube', 'Enable searching for PeerTube videos') }}
 					</NcFormBoxSwitch>
 					<NcFormBoxSwitch
-						:model-value="state.link_preview_enabled"
-						@update:model-value="onCheckboxChanged($event, 'link_preview_enabled')">
+						:modelValue="state.link_preview_enabled"
+						@update:modelValue="onCheckboxChanged($event, 'link_preview_enabled')">
 						{{ t('integration_peertube', 'Enable PeerTube video link previews') }}
 					</NcFormBoxSwitch>
 				</NcFormBox>
@@ -38,8 +38,8 @@ import axios from '@nextcloud/axios'
 import { showError, showSuccess } from '@nextcloud/dialogs'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
-import NcFormBoxSwitch from '@nextcloud/vue/components/NcFormBoxSwitch'
 import NcFormBox from '@nextcloud/vue/components/NcFormBox'
+import NcFormBoxSwitch from '@nextcloud/vue/components/NcFormBoxSwitch'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import PeertubeIcon from './icons/PeertubeIcon.vue'
 import { delay } from '../utils.js'
